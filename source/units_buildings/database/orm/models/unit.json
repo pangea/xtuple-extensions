@@ -33,112 +33,112 @@
         }
       },
       {
-        "name":"unitTypeId", 
+        "name":"unitTypeId",
         "attr": {
           "type": "Number",
           "column": "unit_type_id"
         }
       },
       {
-        "name":"createdAt", 
+        "name":"createdAt",
         "attr": {
           "type": "Date",
           "column": "created_at"
         }
       },
       {
-        "name":"unitName", 
+        "name":"unitName",
         "attr": {
           "type": "String",
           "column": "unit_name"
         }
       },
       {
-        "name":"category", 
+        "name":"category",
         "attr": {
           "type": "String",
           "column": "category"
         }
       },
       {
-        "name":"totalArea", 
+        "name":"totalArea",
         "attr": {
           "type": "Number",
           "column": "total_area"
         }
       },
       {
-        "name":"floorNumber", 
+        "name":"floorNumber",
         "attr": {
           "type": "Number",
           "column": "floor_number"
         }
       },
       {
-        "name":"address", 
+        "name":"address",
         "attr": {
           "type": "String",
           "column": "address"
         }
       },
       {
-        "name":"city", 
+        "name":"city",
         "attr": {
           "type": "String",
           "column": "city"
         }
       },
       {
-        "name":"state", 
+        "name":"state",
         "attr": {
           "type": "String",
           "column": "state"
         }
       },
       {
-        "name":"zipCode", 
+        "name":"zipCode",
         "attr": {
           "type": "Number",
           "column": "zip_code"
         }
       },
       {
-        "name":"majorIntersection", 
+        "name":"majorIntersection",
         "attr": {
           "type": "String",
           "column": "major_intersection"
         }
       },
       {
-        "name":"bedrooms", 
+        "name":"bedrooms",
         "attr": {
           "type": "Number",
           "column": "bedrooms"
         }
       },
       {
-        "name":"bathrooms", 
+        "name":"bathrooms",
         "attr": {
           "type": "Number",
           "column": "bathrooms"
         }
       },
       {
-        "name":"targetRent", 
+        "name":"targetRent",
         "attr": {
           "type": "Number",
           "column": "target_rent"
         }
       },
       {
-        "name":"targetDeposit", 
+        "name":"targetDeposit",
         "attr": {
           "type": "String",
           "column": "target_deposit"
         }
       },
       {
-        "name":"leaseId", 
+        "name":"leaseId",
         "attr": {
           "type": "Number",
           "column": "lease_id"

@@ -1,3 +1,4 @@
-XT.extensions.icecream.initStartup = function () {
-  XT.cacheCollection("XM.iceCreamFlavors", "XM.IceCreamFlavorCollection");
+XT.extensions.units_buildings.initStartup = function () {
+  XT.cacheCollection("XM.units", "XM.UnitCollection");
+  XT.cacheCollection("XM.buildings", "XM.BuildingCollection");
 };

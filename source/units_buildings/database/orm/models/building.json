@@ -20,7 +20,7 @@
         "name": "id",
         "attr": {
           "type": "Number",
-          "column": "building_id",
+          "column": "id",
           "isPrimaryKey": true
         }
       },
@@ -28,7 +28,7 @@
         "name": "buildingName",
         "attr": {
           "type": "String",
-          "column": "building_building_name",
+          "column": "building_name",
           "isNaturalKey": true
         }
       },
@@ -36,147 +36,147 @@
         "name": "portfolioId",
         "attr": {
           "type": "Number",
-          "column": "building_portfolio_id"
+          "column": "portfolio_id"
         }
       },
       {
         "name": "zoneId",
         "attr": {
           "type": "Number",
-          "column": "building_zone_id"
+          "column": "zone_id"
         }
       },
       {
         "name": "buildingTypeId",
         "attr": {
           "type": "Number",
-          "column": "building_building_type_id"
+          "column": "building_type_id"
         }
       },
       {
         "name": "officeId",
         "attr": {
           "type": "Number",
-          "column": "building_office_id"
+          "column": "office_id"
         }
       },
       {
         "name": "promoId",
         "attr": {
           "type": "Number",
-          "column": "building_promo_id"
+          "column": "promo_id"
         }
       },
       {
         "name": "parkingVendorId",
         "attr": {
           "type": "Number",
-          "column": "building_parking_vendor_id"
+          "column": "parking_vendor_id"
         }
       },
       {
         "name": "createdAt",
         "attr": {
           "type": "Date",
-          "column": "building_created_at"
+          "column": "created_at"
         }
       },
       {
         "name": "updatedAt",
         "attr": {
           "type": "Date",
-          "column": "building_updated_at"
+          "column": "updated_at"
         }
       },
       {
         "name": "assetAcquisitionDate",
         "attr": {
           "type": "Date",
-          "column": "building_asset_acquisition_date"
+          "column": "asset_acquisition_date"
         }
       },
       {
         "name": "assetSaleDate",
         "attr": {
           "type": "Date",
-          "column": "building_asset_sale_date"
+          "column": "asset_sale_date"
         }
       },
       {
         "name": "category",
         "attr": {
           "type": "String",
-          "column": "building_category"
+          "column": "category"
         }
       },
       {
         "name": "totalArea",
         "attr": {
           "type": "Number",
-          "column": "building_total_area"
+          "column": "total_area"
         }
       },
       {
         "name": "floors",
         "attr": {
           "type": "Number",
-          "column": "building_floors"
+          "column": "floors"
         }
       },
       {
         "name": "address",
         "attr": {
           "type": "String",
-          "column": "building_address"
+          "column": "address"
         }
       },
       {
         "name": "city",
         "attr": {
           "type": "String",
-          "column": "building_city"
+          "column": "city"
         }
       },
       {
         "name": "state",
         "attr": {
           "type": "String",
-          "column": "building_state"
+          "column": "state"
         }
       },
       {
         "name": "zipCode",
         "attr": {
           "type": "Number",
-          "column": "building_zip_code"
+          "column": "zip_code"
         }
       },
       {
         "name": "neighborhood",
         "attr": {
           "type": "String",
-          "column": "building_neighborhood"
+          "column": "neighborhood"
         }
       },
       {
         "name": "communityName",
         "attr": {
           "type": "String",
-          "column": "building_community_name"
+          "column": "community_name"
         }
       },
       {
         "name": "leasingAgencyApproved",
         "attr": {
           "type": "Boolean",
-          "column": "building_leasing_agency_approved"
+          "column": "leasing_agency_approved"
         }
       },
       {
         "name": "unitCount",
         "attr": {
           "type": "Number",
-          "column": "building_unit_count"
+          "column": "unit_count"
         }
       },
 
