@@ -1,0 +1,150 @@
+[
+  {
+    "context": "unit",
+    "nameSpace": "XM",
+    "type": "Unit",
+    "table": "pangea.unit",
+    "idSequenceName": "pangea.unit_unit_id_seq",
+    "lockable": true,
+    "comment": "Unit",
+    "privileges": {
+      "all": {
+        "create": true,
+        "read": true,
+        "update": true,
+        "delete": true
+      }
+    },
+    "properties": [
+      {
+        "name": "id",
+        "attr": {
+          "type": "Number",
+          "column": "id",
+          "isPrimaryKey": true
+        }
+      },
+      {
+        "name": "buildingId",
+        "attr": {
+          "type": "String",
+          "column": "building_id",
+          "isNaturalKey": true
+        }
+      },
+      {
+        "name":"unitTypeId", 
+        "attr": {
+          "type": "integer",
+          "column": "unit_type_id"
+        }
+      },
+      {
+        "name":"createdAt", 
+        "attr": {
+          "type": "timestamp",
+          "column": "created_at"
+        }
+      },
+      {
+        "name":"unitName", 
+        "attr": {
+          "type": "text",
+          "column": "unit_name"
+        }
+      },
+      {
+        "name":"category", 
+        "attr": {
+          "type": "text",
+          "column": "category"
+        }
+      },
+      {
+        "name":"totalArea", 
+        "attr": {
+          "type": "integer",
+          "column": "total_area"
+        }
+      },
+      {
+        "name":"floorNumber", 
+        "attr": {
+          "type": "integer",
+          "column": "floor_number"
+        }
+      },
+      {
+        "name":"address", 
+        "attr": {
+          "type": "text",
+          "column": "address"
+        }
+      },
+      {
+        "name":"city", 
+        "attr": {
+          "type": "text",
+          "column": "city"
+        }
+      },
+      {
+        "name":"state", 
+        "attr": {
+          "type": "text",
+          "column": "state"
+        }
+      },
+      {
+        "name":"zipCode", 
+        "attr": {
+          "type": "integer",
+          "column": "zip_code"
+        }
+      },
+      {
+        "name":"majorIntersection", 
+        "attr": {
+          "type": "text",
+          "column": "major_intersection"
+        }
+      },
+      {
+        "name":"bedrooms", 
+        "attr": {
+          "type": "integer",
+          "column": "bedrooms"
+        }
+      },
+      {
+        "name":"bathrooms", 
+        "attr": {
+          "type": "integer",
+          "column": "bathrooms"
+        }
+      },
+      {
+        "name":"targetRent", 
+        "attr": {
+          "type": "integer",
+          "column": "target_rent"
+        }
+      },
+      {
+        "name":"targetDeposit", 
+        "attr": {
+          "type": "text",
+          "column": "target_deposit"
+        }
+      },
+      {
+        "name":"leaseId", 
+        "attr": {
+          "type": "integer",
+          "column": "lease_id"
+        }
+      }
+    ],
+    "isSystem": true
+  }
+]
