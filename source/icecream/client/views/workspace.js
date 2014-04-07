@@ -20,13 +20,4 @@ XT.extensions.icecream.initWorkspace = function () {
   });
 
   XV.registerModelWorkspace("XM.IceCreamFlavor", "XV.IceCreamFlavorWorkspace");
-
-
-  var extensions = [
-    {kind: "onyx.GroupboxHeader", container: "mainGroup", content: "_iceCreamFlavor".loc()},
-    {kind: "XV.IceCreamFlavorPicker", container: "mainGroup", attr: "favoriteFlavor" }
-  ];
-
-  XV.appendExtension("XV.ContactWorkspace", extensions);
-
 };

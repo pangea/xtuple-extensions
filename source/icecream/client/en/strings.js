@@ -3,7 +3,8 @@
 
   var lang = XT.stringsFor("en_US", {
     "_iceCreamFlavors": "Ice Cream Flavors",
-    "_mustUseLite": "Must use lite!"
+    "_iceCreamFlavor": "Ice Cream Flavor",
+    "_calories": "Calories"
   });
 
   if (typeof exports !== 'undefined') {

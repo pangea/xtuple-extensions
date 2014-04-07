@@ -6,8 +6,6 @@
   "dependencies": ["crm"],
   "databaseScripts": [
     "create_ic_schema.sql",
-    "icflav.sql",
-    "cntcticflav.sql",
-    "priv.sql"
+    "icflav.sql"
   ]
 }
