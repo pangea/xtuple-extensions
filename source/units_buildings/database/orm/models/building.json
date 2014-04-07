@@ -1,0 +1,80 @@
+[
+  {
+    "context": "building",
+    "nameSpace": "XM",
+    "type": "Building",
+    "table": "pangea.building",
+    "idSequenceName": "pangea.building_building_id_seq",
+    "lockable": true,
+    "comment": "Building",
+    "privileges": {
+      "all": {
+        "create": true,
+        "read": true,
+        "update": true,
+        "delete": true
+      }
+    },
+    "properties": [
+      {
+        "name": "id",
+        "attr": {
+          "type": "Number",
+          "column": "buildings_id",
+          "isPrimaryKey": true
+        }
+      },
+      {
+        "name": "buildingName",
+        "attr": {
+          "type": "String",
+          "column": "buildings_building_name",
+          "isNaturalKey": true
+        }
+      },
+      {
+        "name": "portfolioId",
+        "attr": {
+          "type": "Number",
+          "column": "buildings_portfolio_id"
+        }
+      },
+      {
+        "name": "zoneId",
+        "attr": {
+          "type": "Number",
+          "column": "buildings_zone_id"
+        }
+      },
+      {
+        "name": "buildingTypeId",
+        "attr": {
+          "type": "Number",
+          "column": "buildings_building_type_id"
+        }
+      },
+      {
+        "name": "officeId",
+        "attr": {
+          "type": "Number",
+          "column": "buildings_office_id"
+        }
+      },
+      {
+        "name": "promoId",
+        "attr": {
+          "type": "Number",
+          "column": "buildings_promo_id"
+        }
+      },
+      {
+        "name": "parkingVendorId",
+        "attr": {
+          "type": "Number",
+          "column": "buildings_parking_vendor_id"
+        }
+      }
+    ],
+    "isSystem": true
+  }
+]
