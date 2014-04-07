@@ -1,6 +1,6 @@
 [
   {
-    "context": "unit",
+    "conString": "unit",
     "nameSpace": "XM",
     "type": "Unit",
     "table": "pangea.unit",
@@ -35,112 +35,112 @@
       {
         "name":"unitTypeId", 
         "attr": {
-          "type": "integer",
+          "type": "Number",
           "column": "unit_type_id"
         }
       },
       {
         "name":"createdAt", 
         "attr": {
-          "type": "timestamp",
+          "type": "Date",
           "column": "created_at"
         }
       },
       {
         "name":"unitName", 
         "attr": {
-          "type": "text",
+          "type": "String",
           "column": "unit_name"
         }
       },
       {
         "name":"category", 
         "attr": {
-          "type": "text",
+          "type": "String",
           "column": "category"
         }
       },
       {
         "name":"totalArea", 
         "attr": {
-          "type": "integer",
+          "type": "Number",
           "column": "total_area"
         }
       },
       {
         "name":"floorNumber", 
         "attr": {
-          "type": "integer",
+          "type": "Number",
           "column": "floor_number"
         }
       },
       {
         "name":"address", 
         "attr": {
-          "type": "text",
+          "type": "String",
           "column": "address"
         }
       },
       {
         "name":"city", 
         "attr": {
-          "type": "text",
+          "type": "String",
           "column": "city"
         }
       },
       {
         "name":"state", 
         "attr": {
-          "type": "text",
+          "type": "String",
           "column": "state"
         }
       },
       {
         "name":"zipCode", 
         "attr": {
-          "type": "integer",
+          "type": "Number",
           "column": "zip_code"
         }
       },
       {
         "name":"majorIntersection", 
         "attr": {
-          "type": "text",
+          "type": "String",
           "column": "major_intersection"
         }
       },
       {
         "name":"bedrooms", 
         "attr": {
-          "type": "integer",
+          "type": "Number",
           "column": "bedrooms"
         }
       },
       {
         "name":"bathrooms", 
         "attr": {
-          "type": "integer",
+          "type": "Number",
           "column": "bathrooms"
         }
       },
       {
         "name":"targetRent", 
         "attr": {
-          "type": "integer",
+          "type": "Number",
           "column": "target_rent"
         }
       },
       {
         "name":"targetDeposit", 
         "attr": {
-          "type": "text",
+          "type": "String",
           "column": "target_deposit"
         }
       },
       {
         "name":"leaseId", 
         "attr": {
-          "type": "integer",
+          "type": "Number",
           "column": "lease_id"
         }
       }
