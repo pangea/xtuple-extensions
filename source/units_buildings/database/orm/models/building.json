@@ -20,7 +20,7 @@
         "name": "id",
         "attr": {
           "type": "Number",
-          "column": "buildings_id",
+          "column": "building_id",
           "isPrimaryKey": true
         }
       },
@@ -28,7 +28,7 @@
         "name": "buildingName",
         "attr": {
           "type": "String",
-          "column": "buildings_building_name",
+          "column": "building_building_name",
           "isNaturalKey": true
         }
       },
@@ -36,44 +36,150 @@
         "name": "portfolioId",
         "attr": {
           "type": "Number",
-          "column": "buildings_portfolio_id"
+          "column": "building_portfolio_id"
         }
       },
       {
         "name": "zoneId",
         "attr": {
           "type": "Number",
-          "column": "buildings_zone_id"
+          "column": "building_zone_id"
         }
       },
       {
         "name": "buildingTypeId",
         "attr": {
           "type": "Number",
-          "column": "buildings_building_type_id"
+          "column": "building_building_type_id"
         }
       },
       {
         "name": "officeId",
         "attr": {
           "type": "Number",
-          "column": "buildings_office_id"
+          "column": "building_office_id"
         }
       },
       {
         "name": "promoId",
         "attr": {
           "type": "Number",
-          "column": "buildings_promo_id"
+          "column": "building_promo_id"
         }
       },
       {
         "name": "parkingVendorId",
         "attr": {
           "type": "Number",
-          "column": "buildings_parking_vendor_id"
+          "column": "building_parking_vendor_id"
         }
-      }
+      },
+      {
+        "name": "createdAt",
+        "attr": {
+          "type": "Date",
+          "column": "building_created_at"
+        }
+      },
+      {
+        "name": "updatedAt",
+        "attr": {
+          "type": "Date",
+          "column": "building_updated_at"
+        }
+      },
+      {
+        "name": "assetAcquisitionDate",
+        "attr": {
+          "type": "Date",
+          "column": "building_asset_acquisition_date"
+        }
+      },
+      {
+        "name": "assetSaleDate",
+        "attr": {
+          "type": "Date",
+          "column": "building_asset_sale_date"
+        }
+      },
+      {
+        "name": "category",
+        "attr": {
+          "type": "String",
+          "column": "building_category"
+        }
+      },
+      {
+        "name": "totalArea",
+        "attr": {
+          "type": "Number",
+          "column": "building_total_area"
+        }
+      },
+      {
+        "name": "floors",
+        "attr": {
+          "type": "Number",
+          "column": "building_floors"
+        }
+      },
+      {
+        "name": "address",
+        "attr": {
+          "type": "String",
+          "column": "building_address"
+        }
+      },
+      {
+        "name": "city",
+        "attr": {
+          "type": "String",
+          "column": "building_city"
+        }
+      },
+      {
+        "name": "state",
+        "attr": {
+          "type": "String",
+          "column": "building_state"
+        }
+      },
+      {
+        "name": "zipCode",
+        "attr": {
+          "type": "Number",
+          "column": "building_zip_code"
+        }
+      },
+      {
+        "name": "neighborhood",
+        "attr": {
+          "type": "String",
+          "column": "building_neighborhood"
+        }
+      },
+      {
+        "name": "communityName",
+        "attr": {
+          "type": "String",
+          "column": "building_community_name"
+        }
+      },
+      {
+        "name": "leasingAgencyApproved",
+        "attr": {
+          "type": "Boolean",
+          "column": "building_leasing_agency_approved"
+        }
+      },
+      {
+        "name": "unitCount",
+        "attr": {
+          "type": "Number",
+          "column": "building_unit_count"
+        }
+      },
+
     ],
     "isSystem": true
   }
