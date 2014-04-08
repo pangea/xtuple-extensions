@@ -1,10 +1,10 @@
 select xt.create_table('unit', 'pangea');
 
 select xt.add_column('unit','id', 'serial', 'primary key', 'pangea');
+select xt.add_column('unit','unit_name', 'text', '', 'pangea');
 select xt.add_column('unit','building_id', 'integer', '', 'pangea');
 select xt.add_column('unit','unit_type_id', 'integer', '', 'pangea');
 select xt.add_column('unit','created_at', 'timestamp', '', 'pangea');
-select xt.add_column('unit','unit_name', 'text', '', 'pangea');
 select xt.add_column('unit','category', 'text', '', 'pangea');
 select xt.add_column('unit','total_area', 'integer', '', 'pangea');
 select xt.add_column('unit','floor_number', 'integer', '', 'pangea');
