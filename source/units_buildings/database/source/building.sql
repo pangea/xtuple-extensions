@@ -1,6 +1,7 @@
 select xt.create_table('building', 'pangea');
 
 select xt.add_column('building','id', 'serial', 'primary key', 'pangea');
+select xt.add_column('building','building_name', 'text', '', 'pangea');
 select xt.add_column('building','portfolio_id', 'integer', '', 'pangea');
 select xt.add_column('building','zone_id', 'integer', '', 'pangea');
 select xt.add_column('building','building_type_id', 'integer', '', 'pangea');
@@ -12,7 +13,6 @@ select xt.add_column('building','updated_at', 'timestamp', '', 'pangea');
 select xt.add_column('building','asset_acquisition_date', 'timestamp', '', 'pangea');
 select xt.add_column('building','asset_sale_date', 'timestamp', '', 'pangea');
 select xt.add_column('building','asset_purchase_price', 'integer', '', 'pangea');
-select xt.add_column('building','building_name', 'text', '', 'pangea');
 select xt.add_column('building','category', 'text', '', 'pangea');
 select xt.add_column('building','total_area', 'integer', '', 'pangea');
 select xt.add_column('building','floors', 'integer', '', 'pangea');

@@ -5,7 +5,7 @@ white:true*/
 
 (function () {
   "use strict";
-
+  
   XT.extensions.icecream.initModels = function () {
     XM.IceCreamFlavor = XM.Document.extend({
 
