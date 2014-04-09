@@ -6,10 +6,13 @@ white:true*/
 (function () {
   "use strict";
 
-  XT.extensions.icecream = {
-    setVersion: function () {
-      XT.setVersion("1.8.0", "iceCream");
-    }
+  XT.extensions.icecream.initStartup = function () {
+    XT.cacheCollection("XM.iceCreamFlavors", "XM.IceCreamFlavorCollection");
+
+    XT.Error.addError({
+      code: "icecream3001",
+      messageKey: "_mustUseLite"
+    });
   };
 
 }());

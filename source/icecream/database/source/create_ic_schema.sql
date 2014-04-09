@@ -8,6 +8,3 @@ do $$
   }
 $$ language plv8;
 
-
-
-
