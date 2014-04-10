@@ -1,0 +1,185 @@
+[
+  {
+    "context": "real_estate",
+    "nameSpace": "XM",
+    "type": "RealEstateBuilding",
+    "table": "pangea.real_estate_building",
+    "idSequenceName": "pangea.real_estate_building_id_seq",
+    "lockable": true,
+    "comment": "Building",
+    "privileges": {
+      "all": {
+        "create": true,
+        "read": true,
+        "update": true,
+        "delete": true
+      }
+    },
+    "properties": [
+      {
+        "name": "id",
+        "attr": {
+          "type": "Number",
+          "column": "id",
+          "isPrimaryKey": true
+        }
+      },
+      {
+        "name": "buildingName",
+        "attr": {
+          "type": "String",
+          "column": "building_name",
+          "isNaturalKey": true
+        }
+      },
+      {
+        "name": "portfolioId",
+        "attr": {
+          "type": "Number",
+          "column": "portfolio_id"
+        }
+      },
+      {
+        "name": "zoneId",
+        "attr": {
+          "type": "Number",
+          "column": "zone_id"
+        }
+      },
+      {
+        "name": "buildingTypeId",
+        "attr": {
+          "type": "Number",
+          "column": "building_type_id"
+        }
+      },
+      {
+        "name": "officeId",
+        "attr": {
+          "type": "Number",
+          "column": "office_id"
+        }
+      },
+      {
+        "name": "promoId",
+        "attr": {
+          "type": "Number",
+          "column": "promo_id"
+        }
+      },
+      {
+        "name": "parkingVendorId",
+        "attr": {
+          "type": "Number",
+          "column": "parking_vendor_id"
+        }
+      },
+      {
+        "name": "createdAt",
+        "attr": {
+          "type": "Date",
+          "column": "created_at"
+        }
+      },
+      {
+        "name": "updatedAt",
+        "attr": {
+          "type": "Date",
+          "column": "updated_at"
+        }
+      },
+      {
+        "name": "assetAcquisitionDate",
+        "attr": {
+          "type": "Date",
+          "column": "asset_acquisition_date"
+        }
+      },
+      {
+        "name": "assetSaleDate",
+        "attr": {
+          "type": "Date",
+          "column": "asset_sale_date"
+        }
+      },
+      {
+        "name": "category",
+        "attr": {
+          "type": "String",
+          "column": "category"
+        }
+      },
+      {
+        "name": "totalArea",
+        "attr": {
+          "type": "Number",
+          "column": "total_area"
+        }
+      },
+      {
+        "name": "floors",
+        "attr": {
+          "type": "Number",
+          "column": "floors"
+        }
+      },
+      {
+        "name": "address",
+        "attr": {
+          "type": "String",
+          "column": "address"
+        }
+      },
+      {
+        "name": "city",
+        "attr": {
+          "type": "String",
+          "column": "city"
+        }
+      },
+      {
+        "name": "state",
+        "attr": {
+          "type": "String",
+          "column": "state"
+        }
+      },
+      {
+        "name": "zipCode",
+        "attr": {
+          "type": "Number",
+          "column": "zip_code"
+        }
+      },
+      {
+        "name": "neighborhood",
+        "attr": {
+          "type": "String",
+          "column": "neighborhood"
+        }
+      },
+      {
+        "name": "communityName",
+        "attr": {
+          "type": "String",
+          "column": "community_name"
+        }
+      },
+      {
+        "name": "leasingAgencyApproved",
+        "attr": {
+          "type": "Boolean",
+          "column": "leasing_agency_approved"
+        }
+      },
+      {
+        "name": "unitCount",
+        "attr": {
+          "type": "Number",
+          "column": "unit_count"
+        }
+      }
+    ],
+    "isSystem": true
+  }
+]

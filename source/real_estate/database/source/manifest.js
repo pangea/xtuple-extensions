@@ -6,6 +6,7 @@
   "dependencies": ["crm"],
   "databaseScripts": [
     "create_pangea_schema.sql",
+    "real_estate_building.sql",
     "real_estate_unit.sql"
   ]
 }
