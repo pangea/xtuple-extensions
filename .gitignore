@@ -7,7 +7,7 @@
 /build
 /deploy
 
-
+tmp/
 npm-debug.log
 *.swp
 *.DS_Store
