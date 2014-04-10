@@ -19,4 +19,4 @@ select xt.add_column('real_estate_unit','target_rent', 'integer', '', 'pangea');
 select xt.add_column('real_estate_unit','target_deposit', 'integer', '', 'pangea');
 select xt.add_column('real_estate_unit','lease_id', 'integer', '', 'pangea');
 
-comment on table ic.icflav is 'Real Estate Units';
+comment on table pangea.real_estate_unit is 'Real Estate Units';
