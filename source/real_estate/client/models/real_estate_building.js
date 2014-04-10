@@ -1,7 +1,7 @@
 (function(){
   "use strict";
 
-  XT.extensions.realEstate.initModels = function () {
+  XT.extensions.realEstate.initBuildingModel = function () {
     XM.RealEstateBuilding = XM.Document.extend({
       recordType: "XM.RealEstateBuilding",
       documentKey: "buildingName", // the natural key

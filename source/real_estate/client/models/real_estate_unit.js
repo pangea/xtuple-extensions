@@ -1,7 +1,7 @@
 (function(){
   "use strict";
 
-  XT.extensions.realEstate.initModels = function () {
+  XT.extensions.realEstate.initUnitModel = function () {
     XM.RealEstateUnit = XM.Document.extend({
       recordType: "XM.RealEstateUnit",
       documentKey: "unitName", // the natural key
