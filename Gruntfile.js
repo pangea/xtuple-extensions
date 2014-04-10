@@ -50,19 +50,24 @@ module.exports = function(grunt) {
    * build is a simple wrapper around xtuple's build_app.js script designed to
    * run from this directory.  No real reason to have to cd between directories
    * when building extensions and this helps keep everything in one place.
+   *
+   * It's also pretty busted.  Don't care enough to fix it, made a symlink instead
    */
-  grunt.registerTask('build', 'Calls xtuple\'s build_app command.', function() {
-    if(!args.db) { grunt.log.writeln('You must supply a database.  E.g. `--db dev`'); return false; }
-    if(!args.ext) { grunt.log.writeln('You must supply an extension.  E.g. `--ext icecream`'); return false; }
+  // grunt.registerTask('build', 'Calls xtuple\'s build_app command.', function() {
+  //   if(!args.db) { grunt.log.writeln('You must supply a database.  E.g. `--db dev`'); return false; }
+  //   if(!args.ext) { grunt.log.writeln('You must supply an extension.  E.g. `--ext icecream`'); return false; }
 
-    var done = this.async(),
-        dbArg     = ' -d ' + args.db,
-        module    = args.ext,
-        buildPath = path.resolve(__dirname, '..', 'xtuple', 'scripts', 'build_app.js'),
-        extPath   = path.resolve(__dirname, 'source', module);
+  //   var done      = this.async(),
+  //       database  = args.db,
+  //       module    = args.ext,
+  //       buildPath = path.resolve(__dirname, '..', 'xtuple', 'scripts', 'build_app.js'),
+  //       extPath   = path.resolve(__dirname, 'source', module),
+  //       proc      = spawn(buildPath, ['-d ', database, '-e', extPath]);
 
-    spawn(buildPath + dbArg + ' -e ' + extPath).stdout.on('data', grunt.log.writeln).on('end', done);
-  });
+  //   proc.stdout.on('data', grunt.log.writeln);
+  //   proc.stderr.on('data', grunt.log.writeln);
+  //   proc.on('close', done);
+  // });
 
-  grunt.registerTask('default', ['build'])
+  grunt.registerTask('default', ['make_extension'])
 };

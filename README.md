@@ -19,9 +19,6 @@ Then install all the dependencies.  Run the following command from the same dire
 
     npm install
 
-Currently, two tasks are defined: `make_extension` and `build`.
+Currently, only one task, `make_extension`, is defined.
 
 `make_extension`, as it's name suggests, assists in the extension creation process by generating the necessary file structure for an extension.  It requires one argument, `--name`, which is the name of the extension to create.
-
-`build` is a light wrapper around xtuple's extension compilation process.  It allows you to easily run the build command against an extension.  It requires two arguments: `--db` and `--ext`, where `--db` is the name of the database used and `--ext` is the name of the extension.
-Normally, to build an extension, you'd have to run a command like this: `../xtuple/scripts/build_app.js -d dev -e source/foo`.  This task allows you to simplify to just: `grunt build --db dev --ext foo`.
