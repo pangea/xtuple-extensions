@@ -15,8 +15,14 @@
           {kind: "FittableColumns", components: [
             {kind: "XV.ListColumn", classes: "short",
              components: [
-               {kind: "XV.ListAttr", attr: "unitName", isKey: true},
-               {kind: "XV.ListAttr", attr: "id"},
+               {kind: "XV.ListAttr", attr: "unitName", isKey: true}
+             ]},
+            {kind: "XV.ListColumn", classes: "short",
+             components: [
+               {kind: "XV.ListAttr", attr: "id"}
+             ]},
+            {kind: "XV.ListColumn", classes: "short",
+             components: [
                {kind: "XV.ListAttr", attr: "buildingId"}
              ]}
           ]}
@@ -37,8 +43,14 @@
           {kind: "FittableColumns", components: [
             {kind: "XV.ListColumn", classes: "short",
              components: [
-               {kind: "XV.ListAttr", attr: "buildingName", isKey: true},
-               {kind: "XV.ListAttr", attr: "id"},
+               {kind: "XV.ListAttr", attr: "buildingName", isKey: true}
+             ]},
+            {kind: "XV.ListColumn", classes: "short",
+             components: [
+               {kind: "XV.ListAttr", attr: "id"}
+             ]},
+            {kind: "XV.ListColumn", classes: "short",
+             components: [
                {kind: "XV.ListAttr", attr: "zoneId"}
              ]}
           ]}

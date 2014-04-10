@@ -5,7 +5,7 @@
     enyo.kind({
       name: "XV.RealEstateUnitWorkspace",
       kind: "XV.Workspace",
-      title: "_realEstateUnits".loc(),
+      title: "_realEstateUnit".loc(),
       model: "XM.RealEstateUnit",
       components: [
         {kind: "Panels", arrangerKind: "CarouselArranger",
@@ -39,7 +39,7 @@
     enyo.kind({
       name: "XV.RealEstateBuildingWorkspace",
       kind: "XV.Workspace",
-      title: "_realEstateBuildings".loc(),
+      title: "_realEstateBuilding".loc(),
       model: "XM.RealEstateBuilding",
       components: [
         {kind: "Panels", arrangerKind: "CarouselArranger",

@@ -3,8 +3,10 @@
 
   var lang = XT.stringsFor("en_US", {
     "_realEstate": "Real Estate",
-    "_realEstateUnits": "Real Estate Units",
-    "_realEstateBuildings": "Real Estate Buildings",
+    "_realEstateUnits": "Units",
+    "_realEstateBuildings": "Buildings",
+    "_realEstateUnit": "Unit",
+    "_realEstateBuilding": "Building",
     "_unitName": "Unit Name",
     "_id": "Id",
     "_buildingId": "Buildings Id",
@@ -22,7 +24,21 @@
     "_bathrooms": "Bathrooms",
     "_targetRent": "Target Rent",
     "_targetDeposit": "Target Deposit",
-    "_leaseID": "Lease Id"
+    "_leaseID": "Lease Id",
+    "_buildingName": "Building Name",
+    "_portfolioId": "Portfolio Id",
+    "_zoneId": "Zone Id",
+    "_buildingTypeId": "Building Type Id",
+    "_officeId": "Office Id",
+    "_promoId": "Promo Id",
+    "_parkingVendorId": "Parking Vendor Id",
+    "_assetAcquisitionDate": "Asset Acquisition Date",
+    "_assetSaleDate": "Asset Sale Date",
+    "_floors": "Floors",
+    "_neighborhood": "Neightborhood",
+    "_communityName": "Community Name",
+    "_leasingAgencyApproved": "Leasing Agency Approved",
+    "_unitCount": "Unit Count"
   });
 
   if (typeof exports !== 'undefined') {
