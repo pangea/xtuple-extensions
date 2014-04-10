@@ -26,4 +26,4 @@ select xt.add_column('real_estate_building','leasing_agency_approved', 'boolean'
 select xt.add_column('real_estate_building','unit_count', 'integer', '', 'pangea');
 
 
-comment on table pangea.building is 'Real Estate Buildings';
+comment on table pangea.real_estate_building is 'Real Estate Buildings';

@@ -8,6 +8,7 @@
       {name: "realEstateBuildingList", kind: "XV.RealEstateBuildingList"},
       {name: "realEstateUnitList", kind: "XV.RealEstateUnitList"}
     ];
+
     XT.app.$.postbooks.appendPanels("setup", panels);
-  };  
+  };
 }());

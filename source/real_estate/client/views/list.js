@@ -22,7 +22,8 @@
           ]}
         ]}
       ]
-    }),
+    });
+
     enyo.kind({
       name: "XV.RealEstateBuildingList",
       kind: "XV.List",
@@ -44,5 +45,5 @@
         ]}
       ]
     });
-  };  
+  };
 }());
