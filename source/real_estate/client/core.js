@@ -1,0 +1,1 @@
+XT.extensions.realEstate = {};

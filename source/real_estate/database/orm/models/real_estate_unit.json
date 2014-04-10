@@ -1,0 +1,150 @@
+[
+  {
+    "context": "real_estate",
+    "nameSpace": "XM",
+    "type": "RealEstateUnit",
+    "table": "pangea.real_estate_unit",
+    "idSequenceName": "pangea.real_estate_unit_id_seq",
+    "lockable": true,
+    "comment": "Unit",
+    "privileges": {
+      "all": {
+        "create": true,
+        "read": true,
+        "update": true,
+        "delete": true
+      }
+    },
+    "properties": [
+      {
+        "name": "id",
+        "attr": {
+          "type": "Number",
+          "column": "id",
+          "isPrimaryKey": true
+        }
+      },
+      {
+        "name": "buildingId",
+        "attr": {
+          "type": "Number",
+          "column": "building_id"
+        }
+      },
+      {
+        "name":"unitTypeId",
+        "attr": {
+          "type": "Number",
+          "column": "unit_type_id"
+        }
+      },
+      {
+        "name":"createdAt",
+        "attr": {
+          "type": "Date",
+          "column": "created_at"
+        }
+      },
+      {
+        "name":"unitName",
+        "attr": {
+          "type": "String",
+          "column": "unit_name",
+          "isNaturalKey": true
+        }
+      },
+      {
+        "name":"category",
+        "attr": {
+          "type": "String",
+          "column": "category"
+        }
+      },
+      {
+        "name":"totalArea",
+        "attr": {
+          "type": "Number",
+          "column": "total_area"
+        }
+      },
+      {
+        "name":"floorNumber",
+        "attr": {
+          "type": "Number",
+          "column": "floor_number"
+        }
+      },
+      {
+        "name":"address",
+        "attr": {
+            "type": "String",
+          "column": "address"
+        }
+      },
+      {
+        "name":"city",
+        "attr": {
+          "type": "String",
+          "column": "city"
+        }
+      },
+      {
+        "name":"state",
+        "attr": {
+          "type": "String",
+          "column": "state"
+        }
+      },
+      {
+        "name":"zipCode",
+        "attr": {
+          "type": "Number",
+          "column": "zip_code"
+        }
+      },
+      {
+        "name":"majorIntersection",
+        "attr": {
+          "type": "String",
+          "column": "major_intersection"
+        }
+      },
+      {
+        "name":"bedrooms",
+        "attr": {
+          "type": "Number",
+          "column": "bedrooms"
+        }
+      },
+      {
+        "name":"bathrooms",
+        "attr": {
+          "type": "Number",
+          "column": "bathrooms"
+        }
+      },
+      {
+        "name":"targetRent",
+        "attr": {
+          "type": "Number",
+          "column": "target_rent"
+        }
+      },
+      {
+        "name":"targetDeposit",
+        "attr": {
+          "type": "Number",
+          "column": "target_deposit"
+        }
+      },
+      {
+        "name":"leaseId",
+        "attr": {
+          "type": "Number",
+          "column": "lease_id"
+        }
+      }
+    ],
+    "isSystem": true
+  }
+]
