@@ -61,8 +61,7 @@ module.exports = function(grunt) {
         buildPath = path.resolve(__dirname, '..', 'xtuple', 'scripts', 'build_app.js'),
         extPath   = path.resolve(__dirname, 'source', module);
 
-    grunt.log.writeln(buildPath + dbArg + ' -e ' + extPath);
-    spawn(buildPath + dbArg + ' -e ' + extPath).stdout.pipe(process.stdout).on('end', done);
+    spawn(buildPath + dbArg + ' -e ' + extPath).stdout.on('data', grunt.log.writeln).on('end', done);
   });
 
   grunt.registerTask('default', ['build'])
