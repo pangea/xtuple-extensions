@@ -1,10 +1,10 @@
 [
   {
-    "context": "building",
+    "context": "unitsBuildings",
     "nameSpace": "XM",
-    "type": "Building",
+    "type": "PangeaBuilding",
     "table": "pangea.building",
-    "idSequenceName": "pangea.building_building_id_seq",
+    "idSequenceName": "pangea.building_id_seq",
     "lockable": true,
     "comment": "Building",
     "privileges": {
@@ -178,8 +178,7 @@
           "type": "Number",
           "column": "unit_count"
         }
-      },
-
+      }
     ],
     "isSystem": true
   }
