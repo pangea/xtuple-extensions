@@ -18,8 +18,8 @@
     "html5": "0.3.13",
     "mocha": "1.9.x",
     "zombie": "1.4.x",
-    "gulp": "^3.6.0",
-    "yargs": "^1.2.1"
+    "grunt": "~0.4.4",
+    "yargs": "~1.2.1"
   },
   "optionalDependencies": {},
   "engines": {
