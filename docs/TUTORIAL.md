@@ -5,11 +5,11 @@
 
 Suppose you are working with a prospect who is excited to use xTuple, but are balking at one critical missing feature. The prospect needs to be able to profile each contact's favorite ice cream flavor. The list of possible ice cream flavors must be fully customizable, and include the calorie count. Furthermore, users must be able to filter contacts by ice cream flavor. This data is going to be the lynchpin of an upcoming multichannel promotional campaign that the prospect is about the wage, and they cannot live without it. Using characteristics is not an option, because they do not want to have to hit the `New` button, and, as we'll see, their requirements are going to end using some fairly sophisticated business logic, which is beyond the scope of simple characteristics.
 
-Getting this to work will touch all of the layers of the xTuple stack. On the server side, we'll have to make a new table and related ORMs. On the client side we'll have to make the model for ice cream flavors, the views and the views to profile them. We'll also have to insert this feature into the pre-existing contact view. 
+Getting this to work will touch all of the layers of the xTuple stack. On the server side, we'll have to make a new table and related ORMs. On the client side we'll have to make the model for ice cream flavors, the views and the views to profile them. We'll also have to insert this feature into the pre-existing contact view.
 
 This tutorial will walk you through setting up this customization in three parts. In **Part I** we'll start at the bottom and work our way up to create the `IceCreamFlavor` business object. We'll do the same in **Part II**, and revisiting each layer of the stack will feel like seeing an old friend! Lastly, in **Part III** we'll add some bells and whistles to give you a taste of some of the more advanced functionality that's available.
 
-If you have not already cloned the [core xtuple repository](http://github.com/xtuple/xtuple) and set up your development environment, do so now by following [our setup instructions](https://github.com/xtuple/xtuple/wiki/Setting-up-an-Ubuntu-Virtual-Machine). You will furthermore want to fork and clone this [xtuple-extensions](http://github.com/xtuple/xtuple-extensions) repository. 
+If you have not already cloned the [core xtuple repository](http://github.com/xtuple/xtuple) and set up your development environment, do so now by following [our setup instructions](https://github.com/xtuple/xtuple/wiki/Setting-up-an-Ubuntu-Virtual-Machine). You will furthermore want to fork and clone this [xtuple-extensions](http://github.com/xtuple/xtuple-extensions) repository.
 [ [HOW?] ](TUTORIAL-FAQ.md#how-to-fork-and-clone-xtuple-extensions)
 
 As you work through the tutorial you will be putting of your code in the `/path/to/xtuple-extensions/source/icecream` directory. You can find a full version of the final product in a [sample directory](http://github.com/xtuple/xtuple-extensions/tree/master/sample/icecream). Because it is not in the source directory it is inactive, but it might be useful for reference as you complete the tutorial. By the end of the tutorial your directory structure should look like
@@ -40,7 +40,7 @@ We write our database code in plv8, which allows us to use pure javascript even 
 * `register.sql` (to register the extension in the database)
 * `manifest.js` (as a single point of entry to call the other two and any other files we make)
 
-Let's start by creating the file `/path/to/xtuple-extensions/source/icecream/database/source/create_ic_schema.sql`. 
+Let's start by creating the file `/path/to/xtuple-extensions/source/icecream/database/source/create_ic_schema.sql`.
 Enter the following code into your favorite text editor:
 [ [WHICH?] ](https://github.com/xtuple/xtuple/wiki/Setting-up-an-Ubuntu-Virtual-Machine#sublime-with-jshint-installed)
 
@@ -69,7 +69,7 @@ select xt.add_column('icflav','icflav_calories', 'integer', '', 'ic');
 comment on table ic.icflav is 'Ice cream flavors';
 ```
 
-This will create a table with four columns using our own table and column creation functions 
+This will create a table with four columns using our own table and column creation functions
 [ [WHY?] ](TUTORIAL-FAQ.md#why-not-use-native-postgres-functions-to-create-tables):
 * `icflav_id` (the primary key)
 * `icflav_name` (the natural key)
@@ -140,10 +140,11 @@ From now on, you can just update the database by running the core build tool. Al
 $ cd /path/to/xtuple
 $ ./scripts/build_app.js -d dev -e ../xtuple-extensions/source/icecream
 ```
+**NOTE:** Running the build tool at this stage will throw an error!
 
 ### ORMs
 
-The xTuple ORMs are a JSON mapping between the SQL tables and the object-oriented world above the database. In this part of the tutorial we need to make an ORM for the IceCreamFlavor business object. 
+The xTuple ORMs are a JSON mapping between the SQL tables and the object-oriented world above the database. In this part of the tutorial we need to make an ORM for the IceCreamFlavor business object.
 [ [WHERE?] ](TUTORIAL-FAQ.md#where-should-i-put-orm-definitions)
 
 Enter the following code into the file `/path/to/xtuple-extensions/source/icecream/database/orm/models/ice_cream_flavor.json`:
@@ -217,8 +218,9 @@ The same core build tool that ran the files referenced in `manifest.js` will als
 $ cd /path/to/xtuple
 $ ./scripts/build_app.js -d dev -e ../xtuple-extensions/source/icecream
 ```
+**NOTE:** Running the build tool at this stage will throw an error!
 
-**Verify** your work by finding a new view called ice_cream_flavor in the `xm` schema of your database. 
+**Verify** your work by finding a new view called ice_cream_flavor in the `xm` schema of your database.
 
 ```bash
 $ psql -U admin -d dev -c "select * from xm.ice_cream_flavor;"
@@ -228,7 +230,7 @@ Now we're ready to move on to the client! There is no need to make any modificat
 
 ### Client scaffolding
 
-Now we'll start building out the client. First, you'll want to make a directory called `/path/to/xtuple-extensions/source/icecream/client`, which will have four files, `core.js`, `package.js` and `postbooks.js`, as well as four directories, `en`, `models`, `views`, and `widgets`. 
+Now we'll start building out the client. First, you'll want to make a directory called `/path/to/xtuple-extensions/source/icecream/client`, which will have four files, `core.js`, `package.js` and `postbooks.js`, as well as four directories, `en`, `models`, `views`, and `widgets`.
 
 We'll start with `core.js`, in which we create an object to store our extension. Enter the following into the file `/path/to/xtuple-extensions/source/icecream/client/core.js`:
 [ [WHAT ELSE?] ](TUTORIAL-FAQ.md#what-is-wrapping-the-sample-client-code)
@@ -261,7 +263,7 @@ That's all there is to it. As we'll see later on, though, these model files are 
 
 ### Lists
 
-Now we start writing the Enyo views, so get your browser ready. Enter the following code into the file `/path/to/xtuple-extensions/source/icecream/client/views/list.js`: 
+Now we start writing the Enyo views, so get your browser ready. Enter the following code into the file `/path/to/xtuple-extensions/source/icecream/client/views/list.js`:
 
 ```javascript
 XT.extensions.icecream.initList = function () {
@@ -308,7 +310,7 @@ This will inject the `IceCreamFlavor` list into the `Setup` module of our app. I
 
 ### Packaging the client
 
-We **do** first need to add the glue that will tell the browser which files need to be loaded and in what order, which is the enyo `package.js` files. You can read about the purpose of these files these files in the [Enyo tutorial](https://github.com/enyojs/enyo/wiki/Tutorial#you-got-to-keep-it-separated). 
+We **do** first need to add the glue that will tell the browser which files need to be loaded and in what order, which is the enyo `package.js` files. You can read about the purpose of these files these files in the [Enyo tutorial](https://github.com/enyojs/enyo/wiki/Tutorial#you-got-to-keep-it-separated).
 
 Enter the following code into the file `/path/to/xtuple-extensions/source/icecream/client/package.js`:
 
@@ -379,7 +381,7 @@ enyo.depends(
 
 and uncomment `en` as an entry in the file `/path/to/xtuple-extensions/source/icecream/client/package.js` array.
 
-Starting in version 1.4.6, you will not need to reference this file in the package.js system. Both the build tool 
+Starting in version 1.4.6, you will not need to reference this file in the package.js system. Both the build tool
 and the debug mode will know to look for it in `en/strings.js`. When you're in production mode
 these strings will be served out of the database; this makes possible multi-language support.
 
@@ -424,7 +426,7 @@ XT.extensions.icecream.initWorkspace = function () {
 
 A few things to note. The `attr` fields need to be the model attribute names. The `XV.registerModelWorkspace` tells the application that this is the workspace that should be drilled down to when a user clicks into an item on the list, or clicks the add button.
 
-By now you're hopefully getting the hang of the `package.js` system, so update these files as appropriate. 
+By now you're hopefully getting the hang of the `package.js` system, so update these files as appropriate.
 
 **Verify** your work by rebuilding the extension:
 
