@@ -1,19 +1,7 @@
 (function () {
 
   XT.extensions.realEstate.initPostbooks = function () {
-    var module, panels, relevantPrivileges;
-
-    // ..........................................................
-    // APPLICATION
-    //
-    /*
-    panels = [
-      {name: "realEstateBuildingList", kind: "XV.RealEstateBuildingList"},
-      {name: "realEstateUnitList", kind: "XV.RealEstateUnitList"}
-    ];
-
-    XT.app.$.postbooks.appendPanels("setup", panels);
-    */
+    var module, relevantPrivileges;
 
     module = {
       name: "realEstate",
