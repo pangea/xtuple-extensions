@@ -35,6 +35,12 @@
       kind: "XV.List",
       label: "_realEstateBuildings".loc(),
       collection: "XM.RealEstateBuildingCollection",
+      published: {
+        headerComponents: [
+          {kind: "onyx.Button", name: "partyHard", content: "_logout".loc(),
+           ontap: "backTapped"}
+        ]
+      },
       query: {orderBy: [
         {attribute: 'buildingName'}
       ]},
