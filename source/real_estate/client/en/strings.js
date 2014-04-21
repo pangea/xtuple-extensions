@@ -10,6 +10,7 @@
     "_unitName": "Unit Name",
     "_id": "Id",
     "_buildingId": "Buildings Id",
+    "_building": "Building",
     "_unitTypeId": "Unit Type Id",
     "_createdAt": "Created At",
     "_category": "Category",

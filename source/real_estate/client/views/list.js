@@ -19,11 +19,7 @@
              ]},
             {kind: "XV.ListColumn", classes: "short",
              components: [
-               {kind: "XV.ListAttr", attr: "id"}
-             ]},
-            {kind: "XV.ListColumn", classes: "short",
-             components: [
-               {kind: "XV.ListAttr", attr: "buildingId"}
+               {kind: "XV.ListAttr", attr: "building.buildingName"}
              ]}
           ]}
         ]}
@@ -37,8 +33,7 @@
       collection: "XM.RealEstateBuildingCollection",
       published: {
         headerComponents: [
-          {kind: "onyx.Button", name: "partyHard", content: "_logout".loc(),
-           ontap: "backTapped"}
+          {kind: "onyx.Button", name: "partyHard"}
         ]
       },
       query: {orderBy: [

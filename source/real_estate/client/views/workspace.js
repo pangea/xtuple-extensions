@@ -7,6 +7,11 @@
       kind: "XV.Workspace",
       title: "_realEstateUnit".loc(),
       model: "XM.RealEstateUnit",
+      published: {
+        headerComponents: [
+          {kind: "onyx.Button", name: "partyHard"}
+        ]
+      },
       components: [
         {kind: "Panels", arrangerKind: "CarouselArranger",
          fit: true, components: [
@@ -14,7 +19,7 @@
              {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
              {kind: "XV.ScrollableGroupbox", name: "mainGroup", classes: "in-panel", components: [
                {kind: "XV.InputWidget", attr: "unitName"},
-               {kind: "XV.NumberWidget", attr: "buildingId"},
+               {kind: "XV.RelationWidget", attr: "building", label: "_building".loc(), collection: "XM.RealEstateBuildingCollection", list: "XV.RealEstateBuildingList", keyAttribute: "buildingName", descriptionKey: "name"},
                {kind: "XV.NumberWidget", attr: "unitTypeId"},
                {kind: "XV.DateWidget", attr: "createdAt"},
                {kind: "XV.InputWidget", attr: "category"},

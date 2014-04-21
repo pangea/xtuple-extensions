@@ -25,10 +25,12 @@
         }
       },
       {
-        "name": "buildingId",
-        "attr": {
-          "type": "Number",
-          "column": "building_id"
+        "name": "building",
+        "toOne": {
+          "isNested": true,
+          "type": "RealEstateBuilding",
+          "column": "building_id",
+          "inverse": "id"
         }
       },
       {
