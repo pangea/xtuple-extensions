@@ -2,7 +2,8 @@
   "use strict";
 
   enyo.depends(
-    "list.js",
+    "building_list.js",
+    "unit_list.js",
     "workspace.js"
   );
 }());
