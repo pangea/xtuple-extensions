@@ -2,7 +2,7 @@
   "use strict";
 
   enyo.depends(
-    "lists",
-    "workspaces"
+    "building_workspace.js",
+    "unit_workspace.js"
   );
 }());
