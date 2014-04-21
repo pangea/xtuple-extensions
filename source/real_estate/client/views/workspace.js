@@ -19,7 +19,7 @@
              {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
              {kind: "XV.ScrollableGroupbox", name: "mainGroup", classes: "in-panel", components: [
                {kind: "XV.InputWidget", attr: "unitName"},
-               {kind: "XV.RelationWidget", attr: "building", label: "_building".loc(), collection: "XM.RealEstateBuildingCollection", list: "XV.RealEstateBuildingList", keyAttribute: "buildingName", descriptionKey: "name"},
+               {kind: "XV.RealEstateBuildingRelationWidget", attr: "building"},
                {kind: "XV.NumberWidget", attr: "unitTypeId"},
                {kind: "XV.DateWidget", attr: "createdAt"},
                {kind: "XV.InputWidget", attr: "category"},
