@@ -7,11 +7,6 @@
       kind: "XV.Workspace",
       title: "_realEstateUnit".loc(),
       model: "XM.RealEstateUnit",
-      published: {
-        headerComponents: [
-          {kind: "onyx.Button", name: "partyHard"}
-        ]
-      },
       components: [
         {kind: "Panels", arrangerKind: "CarouselArranger",
          fit: true, components: [

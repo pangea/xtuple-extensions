@@ -1,4 +1,5 @@
 (function () {
+  "use strict";
 
   XT.extensions.realEstate.initPostbooks = function () {
     var module, relevantPrivileges;

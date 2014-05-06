@@ -7,11 +7,6 @@
       kind: "XV.List",
       label: "_realEstateBuildings".loc(),
       collection: "XM.RealEstateBuildingCollection",
-      published: {
-        headerComponents: [
-          {kind: "onyx.Button", name: "partyHard"}
-        ]
-      },
       query: {orderBy: [
         {attribute: 'id'}
       ]},
