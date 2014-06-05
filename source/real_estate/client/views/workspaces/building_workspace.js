@@ -38,7 +38,6 @@
          ]}
       ]
     });
-
     XV.registerModelWorkspace("XM.RealEstateBuilding", "XV.RealEstateBuildingWorkspace");
   };
 }());
