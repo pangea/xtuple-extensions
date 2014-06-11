@@ -13,7 +13,7 @@ module.exports = function(grunt) {
    * generate some sample files given that the name of the extension is known.
    */
   grunt.registerTask('make_extension', 'Generates the file structure for a new extension', function() {
-    if(!args.name) { grunt.log.writeln("Must name extension.  E.G. gulp --name foo"); return false; }
+    if(!args.name) { grunt.log.writeln("Must name extension.  E.G. grunt --name foo"); return false; }
     var baseDir = path.resolve(__dirname, 'source'),
         extName = args.name,
         extDir = path.resolve(baseDir, extName);
