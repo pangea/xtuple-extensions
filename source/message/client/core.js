@@ -8,7 +8,11 @@
       { name: 'messageList', kind: 'XV.MessageList', label: '_message'.loc() }
     ],
     handleNewMessage: function(newMessage) {
-      console.log(newMessage);
+      if(!newMessage) { return; }
+      var nav = XT.app.$.postbooks.getNavigator();
+
+      nav.generateNewChatBox(newMessage.sender);
+      nav.$.messageHolder.$[newMessage.sender + "ChatBox"].addChatMessage(newMessage);
     }
   };
 
