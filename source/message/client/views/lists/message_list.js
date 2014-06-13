@@ -22,12 +22,17 @@
             },
             { kind: "XV.ListColumn", classes: "short",
               components: [ 
-                { kind: "XV.ListAttr", attr: "recipients" }
+                { kind: "XV.ListAttr", attr: "recipient" }
               ]
             },
             { kind: "XV.ListColumn",
               components: [
-              	{ kind: "XV.ListAttr", attr: "body"}
+                { kind: "XV.ListAttr", attr: "text"}
+              ]
+            },
+            { kind: "XV.ListColumn", classes: "short",
+              components: [
+                { kind: "XV.ListAttr", attr: "postDate"}
               ]
             }
           ]
