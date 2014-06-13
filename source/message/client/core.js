@@ -5,7 +5,7 @@
     name: 'messages',
     label: '_message'.loc(),
     panels: [
-      { name: 'messageMessageList', kind: 'XV.MessageMessageList', label: '_message'.loc() }
+      { name: 'messageList', kind: 'XV.MessageList', label: '_message'.loc() }
     ]
   };
 

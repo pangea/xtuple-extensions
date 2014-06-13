@@ -3,10 +3,10 @@
 
   XT.extensions.message.initMessageList = function() {
     enyo.kind({
-      name: "XV.MessageMessageList",
+      name: "XV.MessageList",
       kind: "XV.List",
       label: "_messageList".loc(),
-      collection: "XM.MessageMessageCollection",
+      collection: "XM.MessageCollection",
       query: { 
         orderBy: [
 	        { attribute: 'id' }
