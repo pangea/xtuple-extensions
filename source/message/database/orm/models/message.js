@@ -2,21 +2,43 @@
   {
     "context": "message",
     "nameSpace": "XM",
-    "type": "MessageMessage",
-    "table": "im.message",
-    "idSequenceName": "im.recipient_recipient_id_seq",
-    "lockable": true,
+    "type": "MessageUser",
+    "table": "msguser",
+    "comment": "Message User Map",
+    "properties": [
+      {
+        "name": "msgId",
+        "attr": {
+          "type": "Number",
+          "column": "msguser_msg_id"
+        }
+      },
+      {
+        "name": "username",
+        "attr": {
+          "type": "String",
+          "column": "msguser_username",
+          "isNaturalKey": true
+        }
+      }
+    ]
+  },
+  {
+    "context": "message",
+    "nameSpace": "XM",
+    "type": "Message",
+    "table": "msg",
     "comment": "Message Map",
     "privileges": {
       "all": {
         "create": true,
-        "read": true,
+        "read": false,
         "update": false,
         "delete": false
       },
       "personal": {
-        "update": "EditOwnMessages",
-        "properties": ["sender"]
+        "read": true,
+        "properties": ["sender", "recipient"]
       }
     },
     "properties": [
@@ -24,7 +46,7 @@
         "name": "id",
         "attr": {
           "type": "Number",
-          "column": "comment_id",
+          "column": "msg_id",
           "isPrimaryKey": true
         }
       },
@@ -32,43 +54,31 @@
         "name": "sender",
         "attr": {
           "type": "String",
-          "column": "comment_user",
+          "column": "msg_username",
           "isNaturalKey": true
         }
       },
       {
-        "name": "recipients",
-        "attr": {
-          "type": "String",
-          "column": "recipient_names"
+        "name": "recipient",
+        "toOne": {
+          "type": "MessageUser",
+          "column": "msg_id",
+          "inverse": "msgId",
+          "isChild": true
         }
       },
       {
-        "name": "createdAt",
+        "name": "postDate",
         "attr": {
           "type": "Date",
-          "column": "comment_date"
+          "column": "msg_posted"
         }
       },
       {
-        "name": "body",
+        "name": "text",
         "attr": {
           "type": "String",
-          "column": "comment_text"
-        }
-      },
-      {
-        "name": "isPublic",
-        "attr": {
-          "type": "Boolean",
-          "column": "comment_public"
-        }
-      },
-      {
-        "name": "source",
-        "attr": {
-          "type": "String",
-          "column": "comment_source"
+          "column": "msg_text"
         }
       }
     ],
