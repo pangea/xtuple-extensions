@@ -3,10 +3,10 @@
   
   XT.extensions.message.initMessagesWorkspace = function () {
     enyo.kind({
-      name: "XV.MessageMessageWorkspace",
+      name: "XV.MessageWorkspace",
       kind: "XV.Workspace",
       title: "_message".loc(),
-      model: "XM.MessageMessage",
+      model: "XM.Message",
       components: [
         {kind: "Panels", arrangerKind: "CarouselArranger",
          fit: true, components: [
@@ -27,7 +27,7 @@
       }
     });
 
-    XV.registerModelWorkspace("XM.MessageMessage", "XV.MessageMessageWorkspace");
+    XV.registerModelWorkspace("XM.Message", "XV.MessageWorkspace");
   };
 
 }());

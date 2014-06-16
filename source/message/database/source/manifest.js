@@ -4,8 +4,6 @@
   "comment": "Message extension",
   "loadOrder": 999,
   "databaseScripts": [
-    "create_im_schema.sql",
-    "recipient.sql",
-    "message.sql"
+    "messenger.sql"
   ]
 }

@@ -3,10 +3,10 @@
 
   XT.extensions.message.initMessageList = function() {
     enyo.kind({
-      name: "XV.MessageMessageList",
+      name: "XV.MessageList",
       kind: "XV.List",
       label: "_messageList".loc(),
-      collection: "XM.MessageMessageCollection",
+      collection: "XM.MessageCollection",
       query: { 
         orderBy: [
 	        { attribute: 'id' }
@@ -22,12 +22,17 @@
             },
             { kind: "XV.ListColumn", classes: "short",
               components: [ 
-                { kind: "XV.ListAttr", attr: "recipients" }
+                { kind: "XV.ListAttr", attr: "recipient" }
               ]
             },
             { kind: "XV.ListColumn",
               components: [
-              	{ kind: "XV.ListAttr", attr: "body"}
+                { kind: "XV.ListAttr", attr: "text"}
+              ]
+            },
+            { kind: "XV.ListColumn", classes: "short",
+              components: [
+                { kind: "XV.ListAttr", attr: "postDate"}
               ]
             }
           ]
