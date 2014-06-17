@@ -16,7 +16,7 @@ SELECT xt.install_js('XM', 'Messenger', 'message', $$
       var msgId = plv8.execute("SELECT postmessage($1, $2);", [recipient, message])[0].postmessage,
           msg = plv8.execute("SELECT * FROM xm.message WHERE id = $1;", [msgId])[0],
           notification = { action: 'message', content: '%s' },
-          notifySql = XT.format("NOTIFY %1$I, '%2$s';", ['message', JSON.stringify(notification)]);
+          notifySql = XT.format("NOTIFY %1$I, '%2$s';", ['messenger', JSON.stringify(notification)]);
 
       // For some reason, single quotes are never escaped properly.
       // All the documentation says that format should properly escape single
