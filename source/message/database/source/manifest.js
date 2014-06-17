@@ -4,6 +4,7 @@
   "comment": "Message extension",
   "loadOrder": 999,
   "databaseScripts": [
-    "messenger.sql"
+    "messenger.sql",
+    "comment_trigger.sql"
   ]
 }
