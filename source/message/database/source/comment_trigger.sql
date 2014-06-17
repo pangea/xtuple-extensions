@@ -41,7 +41,7 @@ $$
         XM.Messenger.deliver(username, message);
       });
     }
-    plv8.elog(NOTICE, 'notice', 'comment trigger');
+
   }());
 $$ LANGUAGE plv8;
 
