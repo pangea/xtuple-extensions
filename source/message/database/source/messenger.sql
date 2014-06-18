@@ -20,7 +20,7 @@ SELECT xt.install_js('XM', 'Messenger', 'message', $$
           // All the documentation says that XT.format should properly escape
           // single quotes, but it never seems to work in practice.  Combining
           // it with the replace seems to work, though.
-          notifySql = XT.format("NOTIFY %1$I, '%2$s';", ['messenger', JSON.stringify(notification).replace(/'/g, "''")]);
+          notifySql = XT.format("NOTIFY %1$I, '%2$s';", ['nodext', JSON.stringify(notification).replace(/'/g, "''")]);
 
       // Send notification back up to node so we can send the new message down
       // to the correct client
