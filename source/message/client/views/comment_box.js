@@ -1,7 +1,5 @@
 // We're overwriting the default CommentBoxItem to add additional functionality
 (function() {
-  "use strict";
-  
   enyo.kind(/** @lends XV.CommentBoxItem# */{
     name: "XV.CommentBoxItem",
     classes: "xv-comment-box",
