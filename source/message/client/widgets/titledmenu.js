@@ -14,7 +14,7 @@
     },
     childComponents: [
       {name: "title", kind: "Control"},
-      {name: "client", kind: "enyo.Scroller", strategyKind: "TouchScrollStrategy"}
+      {name: "client", kind: "enyo.Scroller", strategyKind: "TouchScrollStrategy", classes: 'titled-menu-list'}
     ],
     create: function() {
       this.inherited(arguments);

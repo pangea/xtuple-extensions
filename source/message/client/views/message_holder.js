@@ -6,13 +6,13 @@
         workspace = nav.$.workspace,
         messageHolder = workspace.createComponent(
           {
-            name: "messageHolder", classes: "col-lg-10 col-md-10 no-padding clearfix", 
+            name: "messageHolder", classes: "col-lg-10 col-md-10 no-padding clearfix message-holder", 
             components: [
               {
                 kind: 'onyx.MenuDecorator', name: 'chatUsersButton',
                 ontap: "loadChatUsers", style: 'float: right', 
                 components: [
-                  { content: "Users" },
+                  { content: "Users", classes: 'chat-bar-button' },
                   {
                     name: 'chatUserList', kind: "onyx.TitledMenu", 
                     menuTitle: "Online Users", ontap: "chatUserSelected"
@@ -67,7 +67,7 @@
       if(existingChats.indexOf(nameOfChat) == -1){
         chatbox = messageHolder.createComponent(
           {kind: 'onyx.MenuDecorator', name: nameOfChat, ontap: "", style: 'float: right', components: [
-            {content: chatUser},
+            {content: chatUser, classes: 'chat-bar-button'},
             {name: chatUser + "ChatBox", kind: "onyx.ChatBox", chatTitle: chatUser, ontap: "", style: 'right: 0;', components: [
             ]}
           ]}
