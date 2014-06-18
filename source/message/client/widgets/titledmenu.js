@@ -1,6 +1,4 @@
 (function() {
-  "use strict";
-  
   enyo.kind({
     name: "onyx.TitledMenu",
     kind: "onyx.Menu",
