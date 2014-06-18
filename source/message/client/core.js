@@ -9,10 +9,11 @@
     ],
     handleNewMessage: function(newMessage) {
       if(!newMessage) { return; }
-      var nav = XT.app.$.postbooks.getNavigator();
+      var nav = XT.app.$.postbooks.getNavigator(),
+          workspace = nav.$.workspace;
 
-      nav.generateNewChatBox(newMessage.sender);
-      nav.$.messageHolder.$[newMessage.sender + "ChatBox"].addChatMessage(newMessage);
+      workspace.generateNewChatBox(newMessage.sender);
+      workspace.$.messageHolder.$[newMessage.sender + "ChatBox"].addChatMessage(newMessage);
     }
   };
 
