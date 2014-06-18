@@ -4,8 +4,7 @@ $$
     var text = NEW.comment_text,
         sourceId = NEW.comment_source_id,
         // Grab @ mentions. E.g @chall or @bzettler
-        recipients = text.match(/@\w+/g),
-        message;
+        recipients = text.match(/@\w+/g);
 
     // No recipients, no action.
     if(!recipients.length) { return; }
@@ -32,13 +31,11 @@ $$
     }
 
     if(recipients.length) {
-      message = XT.format('New comment on %1$s: %2$s', [sourceId, text]);
-
       recipients.forEach(function(username) {
         // Strip off that leading @
         username = username.replace('@', '');
 
-        XM.Messenger.deliver(username, message);
+        XM.Messenger.deliver(username, text);
       });
     }
 
