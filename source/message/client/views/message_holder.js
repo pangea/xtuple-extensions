@@ -52,9 +52,8 @@
     };
 
     workspace.generateNewChatBox = function(chatUser, openChat) {
-      if (chatUser == undefined) {
-        return
-      }
+      if (!!!chatUser) { return; }
+
       var nameOfChat = chatUser + "Chat",
           messageHolder = this.$.messageHolder,
           existingChats = [],
