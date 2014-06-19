@@ -10,9 +10,14 @@
     handleNewMessage: function(newMessage) {
       if(!newMessage) { return; }
       var nav = XT.app.$.postbooks.getNavigator(),
-          workspace = nav.$.workspace;
+          workspace = nav.$.workspace,
+          button;
 
       workspace.generateNewChatBox(newMessage.sender);
+
+      button = document.querySelectorAll("#" + workspace.$.messageHolder.$[newMessage.sender + "ChatBox"].node.parentNode.id + " button")[0];
+      button.className = button.className + " chat-message-new";
+
       workspace.$.messageHolder.$[newMessage.sender + "ChatBox"].addChatMessage(newMessage);
     }
   };
