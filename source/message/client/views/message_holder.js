@@ -51,7 +51,10 @@
       return true; // stop propagation to loadChatUsers
     };
 
-    workspace.generateNewChatBox = function(chatUser) {
+    workspace.generateNewChatBox = function(chatUser, openChat) {
+      if (chatUser == undefined) {
+        return
+      }
       var nameOfChat = chatUser + "Chat",
           messageHolder = this.$.messageHolder,
           existingChats = [],
@@ -79,9 +82,10 @@
 
       // click the button of the new rendered chat so it is displayed
       button = document.querySelectorAll("#" + chatbox.id + " button")[0];
-
       if(!button.classList.contains('active')) {
-        button.click();
+        if(!(openChat == false)) {
+          button.click();
+        }
       }
 
       // then focus the input

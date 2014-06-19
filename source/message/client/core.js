@@ -13,10 +13,13 @@
           workspace = nav.$.workspace,
           button;
 
-      workspace.generateNewChatBox(newMessage.sender);
+      workspace.generateNewChatBox(newMessage.sender, false);
 
       button = document.querySelectorAll("#" + workspace.$.messageHolder.$[newMessage.sender + "ChatBox"].node.parentNode.id + " button")[0];
-      button.className = button.className + " chat-message-new";
+      if (!button.classList.contains('active')) {
+        button.className = button.className + " chat-message-new";
+      }
+
 
       workspace.$.messageHolder.$[newMessage.sender + "ChatBox"].addChatMessage(newMessage);
     }
