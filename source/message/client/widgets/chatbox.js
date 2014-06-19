@@ -117,27 +117,29 @@ enyo.kind({
         value: msg.sender
       });
     } else {
-      var senderClasses = 'chat-message-sender',
+      var messageClasses = 'chat-message',
           senderName = msg.sender,
           msgDate = new Date(msg.postDate),
           dateString = msgDate.format('m/d/yyyy');
 
       if(senderName == XM.currentUser.id) {
-        senderClasses += ' from-me';
+        messageClasses += ' from-me';
         senderName = 'Me';
+      } else {
+        messageClasses += ' from-other';
       }
 
       if(dateString == (new Date()).format('m/d/yyyy')) {
         dateString = msgDate.format('hh:mm tt');
       }
       client.createComponent({
-        classes: 'chat-message',
+        classes: messageClasses,
         components: [
-          { classes: senderClasses, components: [
+          { classes: "message-head", components: [
             { classes: 'chat-message-time', content: dateString },
             { classes: 'chat-message-sender-name', content: senderName }
           ] },
-          { content: msg.text }
+          { content: msg.text, classes: 'message' }
         ],
         value: msg.sender
       });
