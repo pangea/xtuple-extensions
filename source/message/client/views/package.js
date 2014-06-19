@@ -3,7 +3,8 @@
 
   enyo.depends(
     "lists",
-    "workspaces"
+    "workspaces",
+    "comment_box.js",
+    "message_holder.js"
   );
-
 }());
