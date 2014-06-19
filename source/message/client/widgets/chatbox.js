@@ -111,8 +111,17 @@ enyo.kind({
         lastChild = client.children.slice(-1)[0].children.slice(-1)[0];
 
     if(lastChild && lastChild.value == msg.sender){
+      var messageClasses = 'chat-message chat-message-continued',
+          senderName = msg.sender;
+
+      if(senderName == XM.currentUser.id) {
+        messageClasses += ' from-me';
+      } else {
+        messageClasses += ' from-other';
+      }
+
       client.createComponent({
-        classes: 'chat-message chat-message-continued',
+        classes: messageClasses,
         content: msg.text, 
         value: msg.sender
       });
