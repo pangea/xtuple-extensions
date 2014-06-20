@@ -14,7 +14,7 @@
                 components: [
                   { content: "Users", classes: 'chat-bar-button' },
                   {
-                    name: 'chatUserList', kind: "onyx.TitledMenu", 
+                    name: 'chatUserList', modal: false,  kind: "onyx.TitledMenu", 
                     menuTitle: "Online Users", ontap: "chatUserSelected",
                     minimize: function(inSender, inEvent) {
                       this.setShowing(false);

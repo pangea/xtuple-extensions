@@ -2,6 +2,7 @@ enyo.kind({
   name: "onyx.ChatBox",
   kind: "onyx.Menu",
   classes: "chat-box",
+  modal: false,
   published: {
     //* Title to be displayed
     chatTitle: "Chat:",
