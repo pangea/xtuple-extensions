@@ -5,7 +5,6 @@
     "type": "RealEstateBuilding",
     "table": "pangea.real_estate_building",
     "idSequenceName": "pangea.real_estate_building_id_seq",
-    "lockable": true,
     "comment": "Building",
     "privileges": {
       "all": {
