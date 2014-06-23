@@ -4,9 +4,9 @@
   XT.extensions.accounting = {
     module: {
       name: "accounting",
-      label: "_accounting",
+      label: "_accounting".loc(),
       panels: [
-        { name: "money_in", kind: "XV.CashReceiptList" }
+        { name: "moneyIn", kind: "XV.CashReceiptList", label: '_moneyIn'.loc() }
       ]
     },
     relevantPrivileges: []

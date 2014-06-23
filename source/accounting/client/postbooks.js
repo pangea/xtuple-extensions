@@ -8,5 +8,5 @@
 
     XT.app.$.postbooks.insertModule(module, 9);
     XT.session.addRelevantPrivileges(module.name, relevantPrivileges); 
-  }
+  };
 }());
