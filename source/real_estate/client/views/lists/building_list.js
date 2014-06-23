@@ -27,12 +27,7 @@
              ]}
           ]}
         ]}
-      ],
-      getNavigatorActions: function(){
-        return [
-          {content: 'Party', value: 'party', placement: 'right'}
-        ];
-      }
+      ]
     });
   };
 }());

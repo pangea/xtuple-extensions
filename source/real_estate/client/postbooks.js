@@ -6,16 +6,12 @@
 
     module = XT.extensions.realEstate;
     XT.app.$.postbooks.insertModule(module, 7);
-    XT.app.$.postbooks.insertUserMenuItem(module,[
-      {content: 'Party', value: 'party', method: "test"},
-      {content: 'Party2', value: 'party2', method: "test2"}
-    ]);
+    // XT.app.$.postbooks.insertUserMenuItem(module,[
+    //   {content: 'Test', value: 'test', method: "test"},
+    // ]);
     relevantPrivileges = [];
 
     XT.session.addRelevantPrivileges(module.name, relevantPrivileges);
-    module.test = function(){console.log( "test" );
-};
-    module.test2 = function(){console.log( "test2" );
-};
+    // module.test = function(){console.log( "test" );
   };
 }());
