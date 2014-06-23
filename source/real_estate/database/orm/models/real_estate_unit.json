@@ -5,7 +5,6 @@
     "type": "RealEstateUnit",
     "table": "pangea.real_estate_unit",
     "idSequenceName": "pangea.real_estate_unit_id_seq",
-    "lockable": true,
     "comment": "Unit",
     "privileges": {
       "all": {
