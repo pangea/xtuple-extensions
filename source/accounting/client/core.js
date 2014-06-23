@@ -7,7 +7,8 @@
       label: "_accounting".loc(),
       panels: [
         { name: "cashReceipts", kind: "XV.CashReceiptList", label: '_cashReceipts'.loc() },
-        { name: "invoices", kind: "XV.InvoiceList", label: '_salesHistory'.loc() }
+        { name: "salesOrders", kind: "XV.SalesOrderList", label: '_salesOrders'.loc() },
+        { name: "invoices", kind: "XV.InvoiceList", label: '_invoices'.loc() }
       ]
     },
     relevantPrivileges: []

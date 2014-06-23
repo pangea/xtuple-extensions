@@ -5,7 +5,8 @@
     '_accounting' : 'Accounting',
     '_cashReceipts' : 'Cash Receipts',
     '_tenantLedgers' : 'Tenant Ledgers',
-    '_salesHistory' : 'Sales History'
+    '_invoices' : 'Invoices',
+    '_salesOrders' : 'Sales Orders'
   });
 
   if(typeof(exports) !== 'undefined') {
