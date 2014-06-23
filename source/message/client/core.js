@@ -12,7 +12,7 @@
       var nav = XT.app.$.postbooks.getNavigator(),
           workspace = nav.$.workspace,
           button;
-
+      
       workspace.generateNewChatBox(newMessage.sender, false);
 
       button = document.querySelectorAll("#" + workspace.$.messageHolder.$[newMessage.sender + "ChatBox"].node.parentNode.id + " button")[0];
