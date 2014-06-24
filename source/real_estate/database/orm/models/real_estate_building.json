@@ -41,10 +41,12 @@
         }
       },
       {
-        "name": "zoneId",
-        "attr": {
-          "type": "Number",
-          "column": "zone_id"
+        "name": "zone",
+        "toOne": {
+          "isNested": true,
+          "type": "RealEstateZone",
+          "column": "zone_id",
+          "inverse": "id"
         }
       },
       {

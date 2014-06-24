@@ -23,11 +23,11 @@
              ]},
             {kind: "XV.ListColumn", classes: "short",
              components: [
-               {kind: "XV.ListAttr", attr: "zoneId"}
+               {kind: "XV.ListAttr", attr: "portfolio.name"}
              ]},
             {kind: "XV.ListColumn", classes: "short",
              components: [
-               {kind: "XV.ListAttr", attr: "portfolio.name"}
+               {kind: "XV.ListAttr", attr: "zone.name"}
              ]}
           ]}
         ]}
