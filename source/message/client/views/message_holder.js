@@ -14,8 +14,14 @@
                 components: [
                   { content: "Users", classes: 'chat-bar-button' },
                   {
-                    name: 'chatUserList', kind: "onyx.TitledMenu", 
-                    menuTitle: "Online Users", ontap: "chatUserSelected"
+                    name: 'chatUserList', modal: false,  kind: "onyx.TitledMenu", 
+                    menuTitle: "Online Users", ontap: "chatUserSelected",
+                    minimize: function(inSender, inEvent) {
+                      this.setShowing(false);
+                    },
+                    maximize: function(inSender, inEvent) {
+                      this.setShowing(true);
+                    }
                   }
                 ]
               }
@@ -47,14 +53,13 @@
 
     workspace.chatUserSelected = function(inSender, inEvent) {
       var action = inEvent.originator;
-      this.generateNewChatBox(action.value);
+      if (action.value) {
+        this.generateNewChatBox(action.value);
+      }
       return true; // stop propagation to loadChatUsers
     };
 
     workspace.generateNewChatBox = function(chatUser, openChat) {
-      if (chatUser == undefined) {
-        return
-      }
       var nameOfChat = chatUser + "Chat",
           messageHolder = this.$.messageHolder,
           existingChats = [],
@@ -75,6 +80,7 @@
             ]}
           ]}
         );
+        this.$.chatUserList.minimize();
         this.$.messageHolder.render();
       } else {
         chatbox = messageHolder.$[nameOfChat];

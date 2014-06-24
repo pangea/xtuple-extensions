@@ -2,6 +2,7 @@ enyo.kind({
   name: "onyx.ChatBox",
   kind: "onyx.Menu",
   classes: "chat-box",
+  modal: false,
   published: {
     //* Title to be displayed
     chatTitle: "Chat:",
@@ -109,7 +110,7 @@ enyo.kind({
   addChatMessage: function(msg) {
     var client = this.$.client,
         lastChild = client.children.slice(-1)[0].children.slice(-1)[0];
-
+    
     if(lastChild && lastChild.value == msg.sender){
       var messageClasses = 'chat-message chat-message-continued',
           senderName = msg.sender;
