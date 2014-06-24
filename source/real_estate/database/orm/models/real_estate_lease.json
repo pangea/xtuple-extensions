@@ -1,6 +1,6 @@
 [
   {
-    "conString": "real_estate",
+    "context": "real_estate",
     "nameSpace": "XM",
     "type": "RealEstateLease",
     "table": "pangea.real_estate_lease",
