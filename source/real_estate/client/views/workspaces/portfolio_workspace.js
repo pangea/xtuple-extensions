@@ -15,7 +15,7 @@
              classes: "in-panel", components: [ 
                { kind: 'XV.InputWidget', attr: "name" },
                { kind: "XV.DateWidget", attr: "createdAt" },
-               { kind: "XV.InputWidget", attr: "bankAccount" },
+               // { kind: "XV.InputWidget", attr: "bankAccount" },
                { kind: 'XV.DateWidget', attr: "accountingClosingDate" }
              ]}
           ]}

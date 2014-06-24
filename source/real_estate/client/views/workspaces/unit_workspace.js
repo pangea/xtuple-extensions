@@ -17,7 +17,7 @@
                {kind: "XV.RealEstateBuildingRelationWidget", attr: "building"},
                {kind: "XV.NumberWidget", attr: "unitTypeId"},
                {kind: "XV.DateWidget", attr: "createdAt"},
-               {kind: "XV.InputWidget", attr: "category"},
+               {kind: "XV.UnitsCategoryPicker", attr: "category"},
                {kind: "XV.NumberWidget", attr: "totalArea"},
                {kind: "XV.NumberWidget", attr: "floorNumber"},
                {kind: "XV.InputWidget", attr: "address"},

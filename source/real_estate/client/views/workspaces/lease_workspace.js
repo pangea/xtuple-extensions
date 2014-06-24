@@ -19,10 +19,10 @@
                { kind: "XV.DateWidget", attr: "endDate" },
                { kind: "XV.DateWidget", attr: "moveInDate" },          
                { kind: "XV.DateWidget", attr: "vacatedDate" },
-               { kind: "XV.InputWidget", attr: "reasonForLeaving" },
+               { kind: "XV.LeasesReasonForLeavingPicker", attr: "reasonForLeaving" },
                { kind: "XV.DateWidget", attr: "scheduledMoveOutDate" },
-               { kind: "XV.InputWidget", attr: "status" },
-               { kind: "XV.InputWidget", attr: "publicAssistanceProgram" },
+               { kind: "XV.LeasesStatusPicker", attr: "status" },
+               { kind: "XV.LeasesPublicAssistanceProgramPicker", attr: "publicAssistanceProgram" },
                { kind: "XV.CheckboxWidget", attr: "movedWithin" },
                { kind: "XV.DateWidget", attr: "createdAt" },
                { kind: 'XV.LeaseTypePicker', attr: "type" }
