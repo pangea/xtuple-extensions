@@ -20,10 +20,6 @@
             {kind: "XV.ListColumn", classes: "short",
              components: [
                {kind: "XV.ListAttr", attr: "id"}
-             ]},
-            {kind: "XV.ListColumn", classes: "short",
-             components: [
-               {kind: "XV.ListAttr", attr: "accountId"}
              ]}
           ]}
         ]}

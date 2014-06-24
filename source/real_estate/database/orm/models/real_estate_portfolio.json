@@ -32,13 +32,6 @@
         }
       },
       {
-        "name": "accountId",
-        "attr": {
-          "type": "Number",
-          "column": "account_id"
-        }
-      },
-      {
         "name":"createdAt",
         "attr": {
           "type": "Date",
