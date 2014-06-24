@@ -53,7 +53,7 @@
     "_assetAcquisitionDate": "Asset Acquisition Date",
     "_assetSaleDate": "Asset Sale Date",
     "_floors": "Floors",
-    "_neighborhood": "Neightborhood",
+    "_neighborhood": "Neighborhood",
     "_communityName": "Community Name",
     "_leasingAgencyApproved": "Leasing Agency Approved",
     "_unitCount": "Unit Count"
