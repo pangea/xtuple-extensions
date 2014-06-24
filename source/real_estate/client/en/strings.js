@@ -8,6 +8,7 @@
     "_realEstateLeases": "Leases",
     "_residential": "Residential",
     "_commercial": "Commercial",
+    "_zone": "Zone",
     "_unitId": "Unit Id",
     "_accountId": "Account Id",
     "_accountingClosingDate": "Accounting Closing Date",

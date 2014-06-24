@@ -19,11 +19,23 @@
              ]},
             {kind: "XV.ListColumn", classes: "short",
              components: [
-               {kind: "XV.ListAttr", attr: "promoId"}
+               {kind: "XV.ListAttr", attr: "crmacctId"}
+             ]},
+            {kind: "XV.ListColumn", classes: "short",
+             components: [
+               {kind: "XV.ListAttr", attr: "startDate"}
+             ]},
+            {kind: "XV.ListColumn", classes: "short",
+             components: [
+               {kind: "XV.ListAttr", attr: "endDate"}
              ]},
             {kind: "XV.ListColumn", classes: "short",
              components: [
                {kind: "XV.ListAttr", attr: "type"}
+             ]},
+            {kind: "XV.ListColumn", classes: "short",
+             components: [
+               {kind: "XV.ListAttr", attr: "status"}
              ]}
           ]}
         ]}

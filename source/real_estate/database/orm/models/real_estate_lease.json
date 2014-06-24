@@ -1,6 +1,6 @@
 [
   {
-    "context": "real_estate",
+    "conString": "real_estate",
     "nameSpace": "XM",
     "type": "RealEstateLease",
     "table": "pangea.real_estate_lease",
@@ -32,10 +32,73 @@
         }
       },
       {
-        "name": "promoId",
+        "name": "crmacctId",
         "attr": {
-          "type": "Number",
-          "column": "promo_id"
+          "type": "Number", 
+          "column": "crmacct_id"
+        }
+      },
+      {
+        "name": "startDate",
+        "attr": {
+          "type": "Date", 
+          "column": "start_date"
+        }
+      },
+      {
+        "name": "endDate",
+        "attr": {
+          "type": "Date", 
+          "column": "end_date"
+        }
+      },
+      {
+        "name": "moveInDate",
+        "attr": {
+          "type": "Date", 
+          "column": "move_in_date"
+        }
+      },
+      {
+        "name": "vacatedDate",
+        "attr": {
+          "type": "Date", 
+          "column": "vacated_date"
+        }
+      },
+      {
+        "name": "reasonForLeaving",
+        "attr": {
+          "type": "String", 
+          "column": "reason_for_leaving"
+        }
+      },
+      {
+        "name": "scheduledMoveOutDate",
+        "attr": {
+          "type": "Date", 
+          "column": "scheduled_move_out_date"
+        }
+      },
+      {
+        "name": "status",
+        "attr": {
+          "type": "String", 
+          "column": "status"
+        }
+      },
+      {
+        "name": "publicAssistanceProgram",
+        "attr": {
+          "type": "String", 
+          "column": "public_assistance_program"
+        }
+      },
+      {
+        "name": "movedWithin",
+        "attr": {
+          "type": "Boolean", 
+          "column": "moved_within"
         }
       },
       {
