@@ -2,6 +2,7 @@ select xt.create_table('real_estate_building', 'pangea');
 
 select xt.add_column('real_estate_building','id', 'serial', 'primary key', 'pangea');
 select xt.add_column('real_estate_building','building_name', 'text', '', 'pangea');
+select xt.add_column('real_estate_building','portfolio_id', 'integer', '', 'pangea');
 select xt.add_column('real_estate_building','building_type_id', 'integer', '', 'pangea');
 select xt.add_column('real_estate_building','office_id', 'integer', '', 'pangea');
 select xt.add_column('real_estate_building','promo_id', 'integer', '', 'pangea');
