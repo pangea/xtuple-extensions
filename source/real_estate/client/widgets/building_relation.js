@@ -9,6 +9,6 @@
       list: "XV.RealEstateBuildingList",
       keyAttribute: "buildingName",
       descriptionKey: "name"
-    })
+    });
   };
 }());

@@ -3,6 +3,15 @@
 
   var lang = XT.stringsFor("en_US", {
     "_realEstate": "Real Estate",
+    "_realEstatePortfolios": "Portfolios",
+    "_realEstateZones": "Zones",
+    "_realEstateLeases": "Leases",
+    "_residential": "Residential",
+    "_commercial": "Commercial",
+    "_unitId": "Unit Id",
+    "_accountId": "Account Id",
+    "_accountingClosingDate": "Accounting Closing Date",
+    "_portfolio": "Portfolio",
     "_realEstateUnits": "Units",
     "_realEstateBuildings": "Buildings",
     "_realEstateUnit": "Unit",

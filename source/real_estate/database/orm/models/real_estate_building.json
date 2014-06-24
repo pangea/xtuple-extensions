@@ -32,10 +32,12 @@
         }
       },
       {
-        "name": "portfolioId",
-        "attr": {
-          "type": "Number",
-          "column": "portfolio_id"
+        "name": "portfolio",
+        "toOne": {
+          "isNested": true,
+          "type": "RealEstatePortfolio",
+          "column": "portfolio_id",
+          "inverse": "id"
         }
       },
       {

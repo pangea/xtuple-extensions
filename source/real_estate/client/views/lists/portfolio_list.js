@@ -1,12 +1,12 @@
 (function(){
   "use strict";
 
-  XT.extensions.realEstate.initBuildingList = function () {
+  XT.extensions.realEstate.initPortfolioList = function () {
     enyo.kind({
-      name: "XV.RealEstateBuildingList",
+      name: "XV.RealEstatePortfolioList",
       kind: "XV.List",
-      label: "_realEstateBuildings".loc(),
-      collection: "XM.RealEstateBuildingCollection",
+      label: "_realEstatePortfolios".loc(),
+      collection: "XM.RealEstatePortfolioCollection",
       query: {orderBy: [
         {attribute: 'id'}
       ]},
@@ -15,7 +15,7 @@
           {kind: "FittableColumns", components: [
             {kind: "XV.ListColumn", classes: "short",
              components: [
-               {kind: "XV.ListAttr", attr: "buildingName", isKey: true}
+               {kind: "XV.ListAttr", attr: "name", isKey: true}
              ]},
             {kind: "XV.ListColumn", classes: "short",
              components: [
@@ -23,11 +23,7 @@
              ]},
             {kind: "XV.ListColumn", classes: "short",
              components: [
-               {kind: "XV.ListAttr", attr: "zoneId"}
-             ]},
-            {kind: "XV.ListColumn", classes: "short",
-             components: [
-               {kind: "XV.ListAttr", attr: "portfolio.name"}
+               {kind: "XV.ListAttr", attr: "accountId"}
              ]}
           ]}
         ]}

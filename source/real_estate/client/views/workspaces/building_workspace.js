@@ -14,7 +14,7 @@
              {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
              {kind: "XV.ScrollableGroupbox", name: "mainGroup", classes: "in-panel", components: [
               { kind: 'XV.InputWidget'    , attr: "buildingName" },
-              { kind: 'XV.NumberWidget'   , attr: "portfolioId" },
+              {kind: "XV.RealEstatePortfolioRelationWidget", attr: "portfolio"},
               { kind: 'XV.NumberWidget'   , attr: "zoneId" },
               { kind: 'XV.NumberWidget'   , attr: "buildingTypeId" },
               { kind: 'XV.NumberWidget'   , attr: "officeId" },

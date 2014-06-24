@@ -1,0 +1,65 @@
+[
+  {
+    "context": "real_estate",
+    "nameSpace": "XM",
+    "type": "RealEstateLease",
+    "table": "pangea.real_estate_lease",
+    "idSequenceName": "pangea.real_estate_lease_id_seq",
+    "comment": "Lease",
+    "privileges": {
+      "all": {
+        "create": true,
+        "read": true,
+        "update": true,
+        "delete": true
+      }
+    },
+    "properties": [
+      {
+        "name": "id",
+        "attr": {
+          "type": "Number",
+          "column": "id",
+          "isPrimaryKey": true
+        }
+      },
+      {
+        "name": "unitId",
+        "attr": {
+          "type": "Number",
+          "column": "unit_id",
+          "isNaturalKey": true
+        }
+      },
+      {
+        "name": "promoId",
+        "attr": {
+          "type": "Number",
+          "column": "promo_id"
+        }
+      },
+      {
+        "name": "createdAt",
+        "attr": {
+          "type": "Date",
+          "column": "created_at"
+        }
+      },
+      {
+        "name": "updatedAt",
+        "attr": {
+          "type": "Date",
+          "column": "updated_at"
+        }
+      },
+      {
+        "name": "type",
+        "attr": {
+          "type": "String",
+          "column": "type"
+        }
+      }
+    ],
+    "isSystem": true
+  }
+]

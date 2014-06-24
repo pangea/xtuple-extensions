@@ -1,0 +1,51 @@
+[
+  {
+    "context": "real_estate",
+    "nameSpace": "XM",
+    "type": "RealEstateZone",
+    "table": "pangea.real_estate_zone",
+    "idSequenceName": "pangea.real_estate_zone_id_seq",
+    "comment": "Zone",
+    "privileges": {
+      "all": {
+        "create": true,
+        "read": true,
+        "update": true,
+        "delete": true
+      }
+    },
+    "properties": [
+      {
+        "name": "id",
+        "attr": {
+          "type": "Number",
+          "column": "id",
+          "isPrimaryKey": true
+        }
+      },
+      {
+        "name": "name",
+        "attr": {
+          "type": "String",
+          "column": "name",
+          "isNaturalKey": true
+        }
+      },
+      {
+        "name":"createdAt",
+        "attr": {
+          "type": "Date",
+          "column": "created_at"
+        }
+      },
+      {
+        "name":"updatedAt",
+        "attr": {
+          "type": "Date",
+          "column": "updated_at"
+        }
+      }
+    ],
+    "isSystem": true
+  }
+]

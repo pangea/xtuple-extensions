@@ -1,0 +1,72 @@
+[
+  {
+    "context": "real_estate",
+    "nameSpace": "XM",
+    "type": "RealEstatePortfolio",
+    "table": "pangea.real_estate_portfolio",
+    "idSequenceName": "pangea.real_estate_portfolio_id_seq",
+    "comment": "Portfolio",
+    "privileges": {
+      "all": {
+        "create": true,
+        "read": true,
+        "update": true,
+        "delete": true
+      }
+    },
+    "properties": [
+      {
+        "name": "id",
+        "attr": {
+          "type": "Number",
+          "column": "id",
+          "isPrimaryKey": true
+        }
+      },
+      {
+        "name": "name",
+        "attr": {
+          "type": "String",
+          "column": "name",
+          "isNaturalKey": true
+        }
+      },
+      {
+        "name": "accountId",
+        "attr": {
+          "type": "Number",
+          "column": "account_id"
+        }
+      },
+      {
+        "name":"createdAt",
+        "attr": {
+          "type": "Date",
+          "column": "created_at"
+        }
+      },
+      {
+        "name":"updatedAt",
+        "attr": {
+          "type": "Date",
+          "column": "updated_at"
+        }
+      },
+      {
+        "name":"bankAccount",
+        "attr": {
+          "type": "String",
+          "column": "bank_account"
+        }
+      },
+      {
+        "name":"accountingClosingDate",
+        "attr": {
+          "type": "Date",
+          "column": "accounting_closing_date"
+        }
+      }
+    ],
+    "isSystem": true
+  }
+]
