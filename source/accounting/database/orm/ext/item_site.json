@@ -1,6 +1,6 @@
 [
   {
-    "context": "accounting"
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "ItemSite",
     "table": "xt.itemsiteinfo",
@@ -24,7 +24,7 @@
     "isSystem": true
   },
   {
-    "context": "accounting"
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "ItemSiteListItem",
     "table": "itemsite",
@@ -48,7 +48,7 @@
     "isSystem": true
   },
   {
-    "context": "accounting"
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "ItemSiteRelation",
     "table": "xt.itemsiteinfo",
