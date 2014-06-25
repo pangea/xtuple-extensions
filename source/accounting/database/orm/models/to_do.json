@@ -1,6 +1,6 @@
 [
   {
-    "context": "sales",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "ToDoCustomer",
     "table": "xt.doc",

@@ -1,6 +1,6 @@
 [
   {
-    "context": "billing",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "SalesCategory",
     "table": "salescat",

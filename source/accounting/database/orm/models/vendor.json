@@ -1,6 +1,6 @@
 [
   {
-    "context": "purchasing",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "PurchaseVendorRelation",
     "table": "vendinfo",
@@ -115,7 +115,7 @@
     "isSystem": true
   },
   {
-    "context": "purchasing",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "PurchaseVendorAddress",
     "table": "xt.vendaddr",
