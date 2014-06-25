@@ -1,0 +1,77 @@
+[
+  {
+    "context": "accounting",
+    "nameSpace": "XM",
+    "type": "Item",
+    "table": "item",
+    "isExtension": true,
+    "comment": "Extended by Accounting",
+    "relations": [
+      {
+        "column": "item_id",
+        "inverse": "id"
+      }
+    ],
+    "properties": [
+      {
+        "name": "maximumDesiredCost",
+        "attr": {
+          "type": "Cost",
+          "column": "item_maxcost"
+        }
+      }
+    ],
+    "isSystem": true
+  },
+  {
+    "context": "accounting",
+    "nameSpace": "XM",
+    "type": "ItemRelation",
+    "table": "item",
+    "isExtension": true,
+    "comment": "Extended by Accounting",
+    "relations": [
+      {
+        "column": "item_id",
+        "inverse": "id"
+      }
+    ],
+    "properties": [
+      {
+        "name": "maximumDesiredCost",
+        "attr": {
+          "type": "Cost",
+          "column": "item_maxcost"
+        }
+      }
+    ],
+    "isSystem": true
+  },
+  {
+    "context": "accounting",
+    "nameSpace": "XM",
+    "type": "Item",
+    "table": "item",
+    "isExtension": true,
+    "comment": "Extended by Accounting",
+    "relations": [
+      {
+        "column": "item_id",
+        "inverse": "id"
+      }
+    ],
+    "properties": [
+      {
+        "name": "customers",
+        "toMany": {
+          "isNested": true,
+          "type": "ItemCustomer",
+          "column": "item_id",
+          "inverse": "source"
+        }
+      }
+    ],
+    "sequence": 0,
+    "isSystem": true
+  }  
+]

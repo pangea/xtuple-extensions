@@ -1,0 +1,29 @@
+[
+  {
+    "context": "accounting",
+    "nameSpace": "XM",
+    "type": "Incident",
+    "table": "xt.incdtxt",
+    "isExtension": true,
+    "comment": "Extended by Accounting",
+    "relations": [
+      {
+        "column": "incdt_id",
+        "inverse": "id"
+      }
+    ],
+    "properties": [
+      {
+        "name": "customers",
+        "toMany": {
+          "isNested": true,
+          "type": "IncidentCustomer",
+          "column": "incdt_id",
+          "inverse": "source"
+        }
+      }
+    ],
+    "sequence": 0,
+    "isSystem": true
+  }  
+]

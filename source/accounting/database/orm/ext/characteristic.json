@@ -1,0 +1,51 @@
+[
+  {
+    "context": "accounting",
+    "nameSpace": "XM",
+    "type": "Characteristic",
+    "table": "char",
+    "isExtension": true,
+    "comment": "Extended by Accounting",
+    "relations": [
+      {
+        "column": "char_id",
+        "inverse": "id"
+      }
+    ],
+    "properties": [
+      {
+        "name": "isPurchaseOrders",
+        "attr": {
+          "type": "Boolean",
+          "column": "char_purchaseorders"
+        }
+      }
+    ],
+    "isSystem": true
+  },
+  {
+    "context": "accounting",
+    "nameSpace": "XM",
+    "type": "Characteristic",
+    "table": "char",
+    "isExtension": true,
+    "comment": "Extended by Accounting",
+    "relations": [
+      {
+        "column": "char_id",
+        "inverse": "id"
+      }
+    ],
+    "properties": [
+      {
+        "name": "isSalesOrders",
+        "attr": {
+          "type": "Boolean",
+          "column": "char_salesorders"
+        }
+      }
+    ],
+    "sequence": 0,
+    "isSystem": true
+  }
+]

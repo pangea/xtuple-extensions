@@ -1,0 +1,45 @@
+[
+  {
+    "context": "accounting",
+    "nameSpace": "XM",
+    "type": "Opportunity",
+    "table": "ophead",
+    "isExtension": true,
+    "comment": "Extended by Accounting",
+    "relations": [
+      {
+        "column": "ophead_id",
+        "inverse": "id"
+      }
+    ],
+    "properties": [
+      {
+        "name": "customers",
+        "toMany": {
+          "isNested": true,
+          "type": "OpportunityCustomer",
+          "column": "ophead_id",
+          "inverse": "source"
+        }
+      },
+      {
+        "name": "quoteRelations",
+        "toMany": {
+          "type": "QuoteRelation",
+          "column": "ophead_number",
+          "inverse": "opportunity"
+        }
+      },
+      {
+        "name": "salesOrderRelations",
+        "toMany": {
+          "type": "SalesOrderRelation",
+          "column": "ophead_number",
+          "inverse": "opportunity"
+        }
+      }
+    ],
+    "sequence": 0,
+    "isSystem": true
+  }  
+]
