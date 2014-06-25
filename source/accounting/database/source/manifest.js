@@ -3,12 +3,10 @@
   "comment": "accounting extension",
   "loadOrder": 30,
   "databaseScripts": [
-    //sales
     "xt/tables/acttype.sql",                                                                                                                                                                            
     "xt/views/share_users_cust.sql",                                                                                                                                                                        
     "xt/views/share_users_shipto.sql",                                                                                                                                                                      
     "xt/tables/sharetype.sql",
-    //billing
     "xt/tables/rptdef.sql",
     "xm/javascript/billing.sql",
     "xm/javascript/cashrcpt.sql",
@@ -23,7 +21,6 @@
     "xt/views/aropeninfo.sql",
     "xt/views/receivable_applications.sql",
     "xt/views/cashrcpt.sql",
-    //purchasing
     "xt/functions/po_freight_subtotal.sql",
     "xt/functions/po_line_extended_price.sql",
     "xt/functions/po_line_tax.sql",
