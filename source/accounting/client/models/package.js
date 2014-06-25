@@ -17,3 +17,15 @@ enyo.depends(
   "static.js",
   "startup.js"
 );
+enyo.depends(
+  "account.js",
+  "configure.js",
+  "contact.js",
+  "incident.js",
+  "item.js",
+  "invoice.js",
+  "opportunity.js",
+  "to_do.js",
+  "startup.js",
+  "static.js"
+);

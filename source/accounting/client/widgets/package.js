@@ -11,3 +11,7 @@ enyo.depends(
   "picker.js",
   "relation.js"
 );
+enyo.depends(
+  "parameter.js",
+  "chart.js"
+);
