@@ -1,11 +1,11 @@
 [
   {
-    "context": "purchasing",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "Vendor",
     "table": "vendinfo",
     "isExtension": true,
-    "comment": "Extended by Purchasing",
+    "comment": "Extended by Accounting",
     "relations": [
       {
         "column": "vend_id",

@@ -1,11 +1,11 @@
 [
   {
-    "context": "purchasing",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "Item",
     "table": "item",
     "isExtension": true,
-    "comment": "Extended by Purchasing",
+    "comment": "Extended by Accounting",
     "relations": [
       {
         "column": "item_id",
@@ -24,12 +24,12 @@
     "isSystem": true
   },
   {
-    "context": "purchasing",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "ItemRelation",
     "table": "item",
     "isExtension": true,
-    "comment": "Extended by Purchasing",
+    "comment": "Extended by Accounting",
     "relations": [
       {
         "column": "item_id",
@@ -46,16 +46,14 @@
       }
     ],
     "isSystem": true
-  }
-]
-[
+  },
   {
-    "context": "sales",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "Item",
     "table": "item",
     "isExtension": true,
-    "comment": "Extended by Sales",
+    "comment": "Extended by Accounting",
     "relations": [
       {
         "column": "item_id",

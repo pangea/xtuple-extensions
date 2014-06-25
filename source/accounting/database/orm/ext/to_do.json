@@ -1,11 +1,11 @@
 [
   {
-    "context": "sales",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "ToDo",
     "table": "todoitem",
     "isExtension": true,
-    "comment": "Extended by Sales",
+    "comment": "Extended by Accounting",
     "relations": [
       {
         "column": "todoitem_id",

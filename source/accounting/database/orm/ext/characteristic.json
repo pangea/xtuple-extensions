@@ -1,11 +1,11 @@
 [
   {
-    "context": "purchasing",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "Characteristic",
     "table": "char",
     "isExtension": true,
-    "comment": "Extended by Purchasing",
+    "comment": "Extended by Accounting",
     "relations": [
       {
         "column": "char_id",
@@ -22,16 +22,14 @@
       }
     ],
     "isSystem": true
-  }
-]
-[
+  },
   {
-    "context": "sales",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "Characteristic",
     "table": "char",
     "isExtension": true,
-    "comment": "Extended by Sales",
+    "comment": "Extended by Accounting",
     "relations": [
       {
         "column": "char_id",

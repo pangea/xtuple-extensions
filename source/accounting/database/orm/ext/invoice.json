@@ -1,11 +1,11 @@
 [
   {
-    "context": "billing",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "InvoiceLine",
     "table": "xt.invciteminfo",
     "isExtension": true,
-    "comment": "Extended by Billing",
+    "comment": "Extended by Accounting",
     "relations": [
       {
         "column": "invcitem_id",
@@ -23,16 +23,14 @@
     ],
     "sequence": 0,
     "isSystem": true
-  }
-]
-[
+  },
   {
-    "context": "sales",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "Invoice",
     "table": "xt.invcheadinfo",
     "isExtension": true,
-    "comment": "Extended by Sales",
+    "comment": "Extended by Accounting",
     "relations": [
       {
         "column": "invchead_id",
@@ -75,12 +73,12 @@
     "isSystem": true
   },
   {
-    "context": "sales",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "InvoiceLine",
     "table": "xt.invciteminfo",
     "isExtension": true,
-    "comment": "Extended by Sales",
+    "comment": "Extended by Accounting",
     "relations": [
       {
         "column": "invcitem_id",
@@ -100,12 +98,12 @@
     "isSystem": true
   },
   {
-    "context": "sales",
+    "context": "accounting",
     "nameSpace": "XM",
     "type": "InvoiceListItem",
     "table": "xt.invcheadinfo",
     "isExtension": true,
-    "comment": "Extended by Sales",
+    "comment": "Extended by Accounting",
     "relations": [
       {
         "column": "invchead_id",
