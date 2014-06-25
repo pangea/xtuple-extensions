@@ -4,3 +4,10 @@ enyo.depends(
   "parameter.js",
   "relation.js"
 );
+enyo.depends(
+  "characteristics.js",
+  "combobox.js",
+  "parameter.js",
+  "picker.js",
+  "relation.js"
+);
