@@ -6,7 +6,7 @@ white:true*/
 (function () {
   "use strict";
 
-  XT.extensions.purchasing.initPurchaseOrderModels = function () {
+  XT.extensions.accounting.initPurchaseOrderModels = function () {
 
     /**
       @class

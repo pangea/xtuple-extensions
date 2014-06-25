@@ -7,9 +7,7 @@ enyo.depends(
   "item.js",
   "invoice.js",
   "opportunity.js",
-  "to_do.js",
-  "startup.js",
-  "static.js"
+  "to_do.js"
 );
 enyo.depends(
   //billing
@@ -18,9 +16,7 @@ enyo.depends(
   "sales_category.js",
   "sales_order.js",
   "receivable.js",
-  "static.js",
-  "cash_receipt.js",
-  "startup.js"
+  "cash_receipt.js"
 );
 enyo.depends(
   //purchasing
