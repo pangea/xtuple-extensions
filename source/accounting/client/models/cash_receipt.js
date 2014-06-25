@@ -1,5 +1,5 @@
 /* jshint -W065 *//* suppress radix parameter warning */
-XT.extensions.billing.initCashReceipt = function () {
+XT.extensions.accounting.initCashReceipt = function () {
   'use strict';
 
   /**

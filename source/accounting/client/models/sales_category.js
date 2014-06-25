@@ -1,4 +1,4 @@
-XT.extensions.billing.initSalesCategoryModel = function () {
+XT.extensions.accounting.initSalesCategoryModel = function () {
   'use strict';
 
   /**

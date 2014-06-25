@@ -1,23 +1,5 @@
 enyo.depends(
-  "configure.js",
-  "sales_category.js",
-  "sales_order.js",
-  "receivable.js",
-  "static.js",
-  "cash_receipt.js",
-  "startup.js"
-);
-enyo.depends(
-  "characteristic.js",
-  "configure.js",
-  "item_site.js",
-  "item_source.js",
-  "purchase_order.js",
-  "vendor.js",
-  "static.js",
-  "startup.js"
-);
-enyo.depends(
+  //sales
   "account.js",
   "configure.js",
   "contact.js",
@@ -29,3 +11,26 @@ enyo.depends(
   "startup.js",
   "static.js"
 );
+enyo.depends(
+  //billing
+  "account.js",
+  "configure.js",
+  "sales_category.js",
+  "sales_order.js",
+  "receivable.js",
+  "static.js",
+  "cash_receipt.js",
+  "startup.js"
+);
+enyo.depends(
+  //purchasing
+  "characteristic.js",
+  "configure.js",
+  "item_site.js",
+  "item_source.js",
+  "purchase_order.js",
+  "vendor.js",
+  "static.js",
+  "startup.js"
+);
+

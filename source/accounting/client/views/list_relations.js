@@ -5,7 +5,7 @@ trailing:true, white:true*/
 
 (function () {
 
-  XT.extensions.billing.initListRelations = function () {
+  XT.extensions.accounting.initListRelations = function () {
 
     enyo.kind({
       name: "XV.ReceivableTaxListRelations",
@@ -99,17 +99,6 @@ trailing:true, white:true*/
         return currency ? currency.format(value, scale) : "";
       }
     });
-  };
-}());
-/*jshint bitwise:true, indent:2, curly:true, eqeqeq:true, immed:true,
-latedef:true, newcap:true, noarg:true, regexp:true, undef:true, strict: false,
-trailing:true, white:true*/
-/*global XT:true, XM:true, enyo:true, Globalize:true, _:true*/
-
-(function () {
-
-
-  XT.extensions.purchasing.initListRelations = function () {
 
     enyo.kind({
       name: "XV.ItemSourcePriceListRelations",
@@ -241,21 +230,6 @@ trailing:true, white:true*/
       parentKey: "purchaseType"
     });
 
-  };
-
-}());
-/*jshint bitwise:true, indent:2, curly:true, eqeqeq:true, immed:true,
-latedef:true, newcap:true, noarg:true, regexp:true, undef:true,
-trailing:true, white:true, strict:false */
-/*global XT:true, enyo:true, Globalize:true*/
-
-(function () {
-
-  XT.extensions.sales.initListRelations = function () {
-
-    // ..........................................................
-    // CUSTOMER/PROSPECT SALESORDER
-    //
 
     enyo.kind({
       name: "XV.CustomerSalesOrderListRelations",
@@ -337,5 +311,8 @@ trailing:true, white:true, strict:false */
     });
 
   };
-
 }());
+/*jshint bitwise:true, indent:2, curly:true, eqeqeq:true, immed:true,
+latedef:true, newcap:true, noarg:true, regexp:true, undef:true, strict: false,
+trailing:true, white:true*/
+/*global XT:true, XM:true, enyo:true, Globalize:true, _:true*/

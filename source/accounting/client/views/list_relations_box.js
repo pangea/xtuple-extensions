@@ -5,7 +5,7 @@ trailing:true, white:true*/
 
 (function () {
 
-  XT.extensions.billing.initListRelationsBox = function () {
+  XT.extensions.accounting.initListRelationsBox = function () {
 
     // ..........................................................
     // RECEIVABLE TAXES
@@ -50,17 +50,6 @@ trailing:true, white:true*/
       listRelations: 'XV.CashReceiptLineList',
       title: '_cashReceiptApplications'.loc()
     });
-  };
-
-}());
-/*jshint bitwise:true, indent:2, curly:true, eqeqeq:true, immed:true,
-latedef:true, newcap:true, noarg:true, regexp:true, undef:true,
-trailing:true, white:true*/
-/*global XV:true, XT:true, XM:true, enyo:true*/
-
-(function () {
-
-  XT.extensions.sales.initListRelationsBoxes = function () {
 
     // ..........................................................
     // OPPORTUNITY QUOTE
@@ -185,7 +174,10 @@ trailing:true, white:true*/
       parentKey: "customer", // not a bug
       listRelations: "XV.CustomerQuoteListRelations" // not a bug
     });
-
   };
 
 }());
+/*jshint bitwise:true, indent:2, curly:true, eqeqeq:true, immed:true,
+latedef:true, newcap:true, noarg:true, regexp:true, undef:true,
+trailing:true, white:true*/
+/*global XV:true, XT:true, XM:true, enyo:true*/

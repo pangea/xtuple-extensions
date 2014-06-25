@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  XT.extensions.billing.initSettings = function () {
+  XT.extensions.accounting.initSettings = function () {
     /**
      * @class XM.Billing
      * @extends XM.Settings
@@ -21,18 +21,6 @@
     });
 
     XM.billing = new XM.Billing();
-  };
-})();
-
-/*jshint indent:2, curly:true, eqeqeq:true, immed:true, latedef:true,
-newcap:true, noarg:true, regexp:true, undef:true, strict:true, trailing:true,
-white:true*/
-/*global XT:true, XM:true, _:true */
-
-(function () {
-  "use strict";
-
-  XT.extensions.purchasing.initSettings = function () {
     /**
      * @class XM.Purchasing
      * @extends XM.Settings
@@ -47,18 +35,7 @@ white:true*/
     });
 
     XM.purchasing = new XM.Purchasing();
-  };
-})();
-
-/*jshint indent:2, curly:true, eqeqeq:true, immed:true, latedef:true,
-newcap:true, noarg:true, regexp:true, undef:true, strict:true, trailing:true,
-white:true*/
-/*global XT:true, XM:true, Backbone:true, _:true, console:true */
-
-(function () {
-  "use strict";
-
-  XT.extensions.sales.initSettings = function () {
+    
     /**
       @class
 
@@ -105,5 +82,8 @@ white:true*/
     XM.sales = new XM.Sales();
 
   };
+})();
 
-}());
+/*global XT:true, XM:true, Backbone:true, _:true, console:true */
+
+

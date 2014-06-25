@@ -3,10 +3,15 @@ newcap:true, noarg:true, regexp:true, undef:true, strict:true, trailing:true,
 white:true*/
 /*global XT:true, XM:true, Backbone:true */
 
+/*jshint indent:2, curly:true, eqeqeq:true, immed:true, latedef:true,
+newcap:true, noarg:true, regexp:true, undef:true, strict:true, trailing:true,
+white:true*/
+/*global XT:true, XM:true, Backbone:true, _:true */
+
 (function () {
   "use strict";
 
-  XT.extensions.billing.initStaticModels = function () {
+  XT.extensions.accounting.initStaticModels = function () {
     // These are hard coded collections that may be turned into tables at a later date
     var i, K;
 
@@ -76,17 +81,7 @@ white:true*/
     XM.cashReceiptApplyOptions = new XM.EnumMapCollection(
       XM.CashReceiptApplyOptionEnum
     );
-  };
-}());
-/*jshint indent:2, curly:true, eqeqeq:true, immed:true, latedef:true,
-newcap:true, noarg:true, regexp:true, undef:true, strict:true, trailing:true,
-white:true*/
-/*global XT:true, XM:true, Backbone:true, _:true */
 
-(function () {
-  "use strict";
-
-  XT.extensions.purchasing.initStaticModels = function () {
     var K = XM.ItemSourcePrice,
      i;
 
@@ -137,19 +132,6 @@ white:true*/
     _.each(purchaseOrderWorkflowTypeJson, function (obj) {
       XM.purchaseOrderWorkflowTypes.add(new XM.PurchaseOrderWorkflowTypeModel(obj));
     });
-
-  };
-
-}());
-/*jshint indent:2, curly:true, eqeqeq:true, immed:true, latedef:true,
-newcap:true, noarg:true, regexp:true, undef:true, strict:true, trailing:true,
-white:true*/
-/*global XT:true, XM:true, Backbone:true, _:true, console:true */
-
-(function () {
-  "use strict";
-
-  XT.extensions.sales.initStaticModels = function () {
 
     // These are hard coded collections that may be turned into tables at a later date
     var i;

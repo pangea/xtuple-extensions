@@ -1,4 +1,4 @@
-XT.extensions.billing.initCashReceiptView = function () {
+XT.extensions.accounting.initCashReceiptView = function () {
 
   var model = 'XM.CashReceipt';
 

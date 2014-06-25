@@ -1,37 +1,7 @@
 (function () {
   "use strict";
 
-  XT.extensions.billing.initStartup = function () {
-    XT.cacheCollection("XM.bankAccountRelations", "XM.BankAccountRelationCollection");
-    XT.cacheCollection("XM.customerEmailProfiles", "XM.CustomerEmailProfileCollection");
-    XT.cacheCollection("XM.incidentCategories", "XM.IncidentCategoryCollection");
-  };
-
-}());
-/*jshint indent:2, curly:true, eqeqeq:true, immed:true, latedef:true,
-newcap:true, noarg:true, regexp:true, undef:true, strict:true, trailing:true,
-white:true*/
-/*global XT:true, XM:true, Backbone:true, _:true, console:true */
-
-(function () {
-  "use strict";
-
-  XT.extensions.purchasing.initStartup = function () {
-    XT.cacheCollection("XM.purchaseEmailProfiles", "XM.PurchaseEmailProfileCollection", "name");
-    XT.cacheCollection("XM.purchaseTypes", "XM.PurchaseTypeCollection", "code");
-    XT.cacheCollection("XM.itemSourceManufacturers", "XM.ItemSourceManufacturerCollection", "manufacturerName");
-  };
-
-}());
-/*jshint indent:2, curly:true, eqeqeq:true, immed:true, latedef:true,
-newcap:true, noarg:true, regexp:true, undef:true, strict:true, trailing:true,
-white:true*/
-/*global XT:true, XM:true, Backbone:true, _:true, console:true */
-
-(function () {
-  "use strict";
-
-  XT.extensions.sales.initStartup = function () {
+  XT.extensions.accounting.initStartup = function () {
     XT.cacheCollection("XM.classCodes", "XM.ClassCodeCollection", "code");
     XT.cacheCollection("XM.costCategories", "XM.CostCategoryCollection", "code");
     XT.cacheCollection("XM.customerEmailProfiles", "XM.CustomerEmailProfileCollection");
@@ -48,6 +18,15 @@ white:true*/
     XT.cacheCollection("XM.siteTypes", "XM.SiteTypeCollection", "name");
     XT.cacheCollection("XM.terms", "XM.TermsCollection");
     XT.cacheCollection("XM.bankAccountRelations", "XM.BankAccountRelationCollection");
+    XT.cacheCollection("XM.customerEmailProfiles", "XM.CustomerEmailProfileCollection");
+    XT.cacheCollection("XM.incidentCategories", "XM.IncidentCategoryCollection");
+    XT.cacheCollection("XM.purchaseEmailProfiles", "XM.PurchaseEmailProfileCollection", "name");
+    XT.cacheCollection("XM.purchaseTypes", "XM.PurchaseTypeCollection", "code");
+    XT.cacheCollection("XM.itemSourceManufacturers", "XM.ItemSourceManufacturerCollection", "manufacturerName");
   };
 
 }());
+/*jshint indent:2, curly:true, eqeqeq:true, immed:true, latedef:true,
+newcap:true, noarg:true, regexp:true, undef:true, strict:true, trailing:true,
+white:true*/
+/*global XT:true, XM:true, Backbone:true, _:true, console:true */

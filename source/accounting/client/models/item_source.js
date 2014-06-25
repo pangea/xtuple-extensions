@@ -6,7 +6,7 @@ white:true*/
 (function () {
   "use strict";
 
-  XT.extensions.purchasing.initItemSourceModels = function () {
+  XT.extensions.accounting.initItemSourceModels = function () {
 
     /** @private */
     var _descComparator = function (a, b) {
@@ -206,6 +206,7 @@ white:true*/
 
       @extends XM.Model
     */
+
     XM.ItemSourcePrice = XM.Model.extend({
 
       recordType: "XM.ItemSourcePrice",

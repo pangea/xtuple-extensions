@@ -1,4 +1,4 @@
-XT.extensions.billing.extendSalesOrder = function () {
+XT.extensions.accounting.extendSalesOrder = function () {
   'use strict';
 
   if (_.isUndefined(XM.SalesOrder)) {

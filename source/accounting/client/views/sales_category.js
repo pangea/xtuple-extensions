@@ -1,4 +1,4 @@
-XT.extensions.billing.initSalesCategoryView = function () {
+XT.extensions.accounting.initSalesCategoryView = function () {
 
   var model = 'XM.SalesCategory';
 

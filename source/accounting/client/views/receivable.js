@@ -1,4 +1,4 @@
-XT.extensions.billing.initReceivableView = function () {
+XT.extensions.accounting.initReceivableView = function () {
 
   var model = 'XM.Receivable';
 

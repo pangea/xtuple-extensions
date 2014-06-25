@@ -1,6 +1,6 @@
 (function () {
 
-  XT.extensions.billing.initWorkspaces = function () {
+  XT.extensions.accounting.initWorkspaces = function () {
 
     // ..........................................................
     // CONFIGURE
@@ -244,50 +244,50 @@
     title: '_cashReceipt'.loc(),
     components: [
       {kind: 'Panels', arrangerKind: 'CarouselArranger',
-          fit: true, components: [
-        {kind: 'XV.Groupbox', name: 'mainPanel', components: [
-          {kind: 'onyx.GroupboxHeader', content: '_overview'.loc()},
-          {kind: 'XV.ScrollableGroupbox', name: 'mainGroup',
-              classes: 'in-panel', components: [
-            {kind: 'XV.InputWidget', attr: 'number'},
-            {kind: 'XV.CheckboxWidget', attr: 'isPosted', label: '_posted'.loc()},
-            {kind: 'XV.SalesCustomerWidget', attr: 'customer'},
-            {kind: 'XV.BankAccountWidget', attr: 'bankAccount'},
-            {kind: 'XV.FundsTypePicker', attr: 'fundsType', onSelect: 'fundsTypeSelected'},
-            {kind: 'XV.CashReceiptApplyOptionsPicker',
-              attr: 'useCustomerDeposit',
-              onSelect: 'applyOptionSelected'
-            },
-            {tag: 'hr'},
-            {kind: 'XV.DateWidget', attr: 'documentDate'},
-            {kind: 'XV.DateWidget', attr: 'distributionDate'},
-            {kind: 'XV.DateWidget', attr: 'applicationDate'},
-            {tag: 'hr'},
-            {kind: 'XV.MoneyWidget',
-              name: 'balance',
-              label: '_balance'.loc(),
-              attr: { localValue: 'balance', currency: 'currency' },
-              disableCurrency: true
-            },
-            {kind: 'XV.MoneyWidget',
-              label: '_amount'.loc(),
-              attr: { localValue: 'amount', currency: 'currency' },
-              disableCurrency: true
-            },
-            {kind: 'XV.MoneyWidget',
-              label: '_appliedAmount'.loc(),
-              attr: { localValue: 'appliedAmount', currency: 'currency' },
-              disableCurrency: true
-            },
-            {kind: 'onyx.GroupboxHeader', content: '_notes'.loc()},
-            {kind: 'XV.TextArea', attr: 'notes'},
-          ]}
-        ]},
-        {kind: 'XV.CashReceiptApplicationsBox', attr: 'lineItems'},
-        {kind: 'XV.CreditCardBox', attr: 'customer.creditCards'}
-      ]}
+       fit: true, components: [
+         {kind: 'XV.Groupbox', name: 'mainPanel', components: [
+           {kind: 'onyx.GroupboxHeader', content: '_overview'.loc()},
+           {kind: 'XV.ScrollableGroupbox', name: 'mainGroup',
+            classes: 'in-panel', components: [
+              {kind: 'XV.InputWidget', attr: 'number'},
+              {kind: 'XV.CheckboxWidget', attr: 'isPosted', label: '_posted'.loc()},
+              {kind: 'XV.SalesCustomerWidget', attr: 'customer'},
+              {kind: 'XV.BankAccountWidget', attr: 'bankAccount'},
+              {kind: 'XV.FundsTypePicker', attr: 'fundsType', onSelect: 'fundsTypeSelected'},
+              {kind: 'XV.CashReceiptApplyOptionsPicker',
+               attr: 'useCustomerDeposit',
+               onSelect: 'applyOptionSelected'
+              },
+              {tag: 'hr'},
+              {kind: 'XV.DateWidget', attr: 'documentDate'},
+              {kind: 'XV.DateWidget', attr: 'distributionDate'},
+              {kind: 'XV.DateWidget', attr: 'applicationDate'},
+              {tag: 'hr'},
+              {kind: 'XV.MoneyWidget',
+               name: 'balance',
+               label: '_balance'.loc(),
+               attr: { localValue: 'balance', currency: 'currency' },
+               disableCurrency: true
+              },
+              {kind: 'XV.MoneyWidget',
+               label: '_amount'.loc(),
+               attr: { localValue: 'amount', currency: 'currency' },
+               disableCurrency: true
+              },
+              {kind: 'XV.MoneyWidget',
+               label: '_appliedAmount'.loc(),
+               attr: { localValue: 'appliedAmount', currency: 'currency' },
+               disableCurrency: true
+              },
+              {kind: 'onyx.GroupboxHeader', content: '_notes'.loc()},
+              {kind: 'XV.TextArea', attr: 'notes'},
+            ]}
+         ]},
+         {kind: 'XV.CashReceiptApplicationsBox', attr: 'lineItems'},
+         {kind: 'XV.CreditCardBox', attr: 'customer.creditCards'}
+       ]}
     ],
-
+    
     /**
      * @see XM.CashReceiptView
      * @fires XM.CashReceiptView#events
@@ -297,18 +297,18 @@
       onBalanceChange: 'balanceChanged',
       newItem: 'newCashReceiptLineTapped'
     },
-
+    
     newCashReceiptLineTapped: function (inSender, inEvent) {
       this.log(inEvent);
     },
-
+    
     /**
      * @listens onBalanceChange
      */
     balanceChanged: function (inSender, inEvent) {
       this.$.balance.addRemoveClass('xv-balance-negative', this.value.get('balance') < 0);
     },
-
+    
     /**
      * @listens onDateChange
      */
@@ -320,14 +320,14 @@
       // XXX I don't think this code makes sense. I need to revisit the spec
       // and figure out what's going on here
       /*
-      if (moment(this.value.get('distributionDate'))
-          .isBefore(this.value.get('applicationDate'))) {
-        this.$.fundsTypePicker.setLabel('_recordReceiptAs'.loc());
-      }
-      else {
-        this.$.fundsTypePicker.setLabel('_applyBalanceAs'.loc());
-      }
-      */
+       if (moment(this.value.get('distributionDate'))
+       .isBefore(this.value.get('applicationDate'))) {
+       this.$.fundsTypePicker.setLabel('_recordReceiptAs'.loc());
+       }
+       else {
+       this.$.fundsTypePicker.setLabel('_applyBalanceAs'.loc());
+       }
+       */
     }
 
   });
@@ -349,138 +349,128 @@
 
     components: [
       {kind: 'Panels', arrangerKind: 'CarouselArranger',
-          fit: true, components: [
-        {kind: 'XV.Groupbox', name: 'mainPanel', components: [
-          {kind: 'onyx.GroupboxHeader', content: '_overview'.loc()},
-          {kind: 'XV.ScrollableGroupbox', name: 'mainGroup',
-              classes: 'in-panel', components: [
-            {kind: 'XV.InputWidget', attr: 'number'}
-          ]}
-        ]}
-      ]}
+       fit: true, components: [
+         {kind: 'XV.Groupbox', name: 'mainPanel', components: [
+           {kind: 'onyx.GroupboxHeader', content: '_overview'.loc()},
+           {kind: 'XV.ScrollableGroupbox', name: 'mainGroup',
+            classes: 'in-panel', components: [
+              {kind: 'XV.InputWidget', attr: 'number'}
+            ]}
+         ]}
+       ]}
     ]
   });
 
   XV.registerModelWorkspace('XM.CashReceiptLineListItem', 'XV.CashReceiptReceivableWorkspace');
 
-}());
-/*jshint bitwise:true, indent:2, curly:true, eqeqeq:true, immed:true,
-latedef:true, newcap:true, noarg:true, regexp:true, undef:true,
-trailing:true, white:true, strict: false*/
-/*global XT:true, XM:true, XV:true, enyo:true, Globalize: true, _:true*/
+  var preferencesExtensions = [
+    {kind: "XV.SitePicker", container: "mainGroup", attr: "PreferredWarehouse",
+     label: "_defaultSite".loc() }
+  ];
+  XV.appendExtension("XV.UserPreferenceWorkspace", preferencesExtensions);
 
-(function () {
+  // ..........................................................
+  // CHARACTERISTIC
+  //
 
-  XT.extensions.purchasing.initWorkspaces = function () {
+  var extensions = [
+    {kind: "XV.ToggleButtonWidget", attr: "isPurchaseOrders",
+     label: "_purchaseOrders".loc(), container: "rolesGroup"},
+  ];
 
-    var preferencesExtensions = [
-      {kind: "XV.SitePicker", container: "mainGroup", attr: "PreferredWarehouse",
-        label: "_defaultSite".loc() }
-    ];
-    XV.appendExtension("XV.UserPreferenceWorkspace", preferencesExtensions);
+  XV.appendExtension("XV.CharacteristicWorkspace", extensions);
 
-    // ..........................................................
-    // CHARACTERISTIC
-    //
+  // ..........................................................
+  // CONFIGURE
+  //
 
-    var extensions = [
-      {kind: "XV.ToggleButtonWidget", attr: "isPurchaseOrders",
-        label: "_purchaseOrders".loc(), container: "rolesGroup"},
-    ];
-
-    XV.appendExtension("XV.CharacteristicWorkspace", extensions);
-
-    // ..........................................................
-    // CONFIGURE
-    //
-
-    /* TODO:
-      "BillDropShip",
-      "EnableDropShipments",
-      "NextVoucherNumber"
-    */
-    enyo.kind({
-      name: "XV.PurchasingWorkspace",
-      kind: "XV.Workspace",
-      title: "_configure".loc() + " " + "_purchasing".loc(),
-      model: "XM.Purchasing",
-      components: [
-        {kind: "Panels", arrangerKind: "CarouselArranger",
-          fit: true, components: [
-          {kind: "XV.Groupbox", name: "mainPanel", components: [
-            {kind: "XV.ScrollableGroupbox", name: "mainGroup", fit: true,
-              classes: "in-panel", components: [
+  /* TODO:
+   "BillDropShip",
+   "EnableDropShipments",
+   "NextVoucherNumber"
+   */
+  enyo.kind({
+    name: "XV.PurchasingWorkspace",
+    kind: "XV.Workspace",
+    title: "_configure".loc() + " " + "_purchasing".loc(),
+    model: "XM.Purchasing",
+    components: [
+      {kind: "Panels", arrangerKind: "CarouselArranger",
+       fit: true, components: [
+         {kind: "XV.Groupbox", name: "mainPanel", components: [
+           {kind: "XV.ScrollableGroupbox", name: "mainGroup", fit: true,
+            classes: "in-panel", components: [
               {kind: "onyx.GroupboxHeader", content: "_vendor".loc()},
               {kind: "XV.InputWidget", attr: "DefaultPOShipVia",
-                label: "_defaultShipVia".loc()},
+               label: "_defaultShipVia".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "VendorChangeLog",
-                label: "_changeLog".loc()},
+               label: "_changeLog".loc()},
               {kind: "onyx.GroupboxHeader", content: "_purchaseOrder".loc()},
               {kind: "XV.NumberPolicyPicker", attr: "PONumberGeneration",
-                label: "_number".loc() + " " + "_policy".loc()},
+               label: "_number".loc() + " " + "_policy".loc()},
               {kind: "XV.NumberWidget", attr: "NextPurchaseOrderNumber",
-                label: "_nextNumber".loc(), formatting: false},
+               label: "_nextNumber".loc(), formatting: false},
               {kind: "XV.ToggleButtonWidget", attr: "POChangeLog",
-                label: "_changeLog".loc()},
+               label: "_changeLog".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "RequireStdCostForPOItem"},
               {kind: "XV.ToggleButtonWidget", attr: "DefaultPrintPOOnSave"},
               {kind: "XV.ToggleButtonWidget", attr: "UseEarliestAvailDateOnPOItem"},
               {kind: "XV.ToggleButtonWidget", attr: "RequirePOTax"},
               {kind: "onyx.GroupboxHeader", content: "_purchaseRequest".loc()},
               {kind: "XV.NumberPolicyPicker", attr: "PrNumberGeneration",
-                label: "_number".loc() + " " + "_policy".loc()},
+               label: "_number".loc() + " " + "_policy".loc()},
               {kind: "XV.NumberWidget", attr: "NextPurchaseRequestNumber",
-                label: "_nextNumber".loc(), formatting: false},
+               label: "_nextNumber".loc(), formatting: false},
               {kind: "XV.ToggleButtonWidget", attr: "CopyPRtoPOItem"}
             ]}
-          ]}
-        ]}
-      ]
-    });
+         ]}
+       ]}
+    ]
+  });
 
-    // ..........................................................
-    // ITEM
-    //
+  // ..........................................................
+  // ITEM
+  //
 
-    extensions = [
-      {kind: "onyx.GroupboxHeader", content: "_purchasing".loc(),
-        container: "settingsGroup"},
-      {kind: "XV.PurchasePriceWidget", attr: "maximumDesiredCost",
-        container: "settingsGroup"}
-    ];
+  extensions = [
+    {kind: "onyx.GroupboxHeader", content: "_purchasing".loc(),
+     container: "settingsGroup"},
+    {kind: "XV.PurchasePriceWidget", attr: "maximumDesiredCost",
+     container: "settingsGroup"}
+  ];
 
-    XV.appendExtension("XV.ItemWorkspace", extensions);
+  XV.appendExtension("XV.ItemWorkspace", extensions);
 
-    // ..........................................................
-    // ITEM SITE
-    //
+  // ..........................................................
+  // ITEM SITE
+  //
 
-    extensions = [
-      {kind: "XV.Groupbox", name: "supplyPanel", title: "_supply".loc(),
-        fit: true, components: [
-        {kind: "onyx.GroupboxHeader", content: "_supply".loc()},
-        {kind: "XV.CheckboxWidget", attr: "isPurchased", name: "isPurchased"}
-      ], container: "panels"}
-    ];
+  extensions = [
+    {kind: "XV.Groupbox", name: "supplyPanel", title: "_supply".loc(),
+     fit: true, components: [
+       {kind: "onyx.GroupboxHeader", content: "_supply".loc()},
+       {kind: "XV.CheckboxWidget", attr: "isPurchased", name: "isPurchased"}
+     ], container: "panels"}
+  ];
 
-    XV.appendExtension("XV.ItemSiteWorkspace", extensions);
+  XV.appendExtension("XV.ItemSiteWorkspace", extensions);
 
-    // ..........................................................
-    // ITEM SOURCE
-    //
+  // ..........................................................
+  // ITEM SOURCE
+  //
 
-    enyo.kind({
-      name: "XV.ItemSourceWorkspace",
-      kind: "XV.Workspace",
-      title: "_itemSource".loc(),
-      model: "XM.ItemSource",
-      components: [
-        {kind: "Panels", arrangerKind: "CarouselArranger",
-          fit: true, components: [
-          {kind: "XV.Groupbox", name: "mainPanel", components: [
-            {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
-            {kind: "XV.ScrollableGroupbox", name: "mainGroup",
-              classes: "in-panel", fit: true, components: [
+  enyo.kind({
+    name: "XV.ItemSourceWorkspace",
+    kind: "XV.Workspace",
+    title: "_itemSource".loc(),
+    model: "XM.ItemSource",
+    components: [
+      {kind: "Panels", arrangerKind: "CarouselArranger",
+       fit: true, components: [
+         {kind: "XV.Groupbox", name: "mainPanel", components: [
+           {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
+           {kind: "XV.ScrollableGroupbox", name: "mainGroup",
+            classes: "in-panel", fit: true, components: [
               {kind: "XV.ItemWidget", attr: "item"},
               {kind: "XV.VendorWidget", attr: "vendor"},
               {kind: "XV.CheckboxWidget", attr: "isActive"},
@@ -490,19 +480,19 @@ trailing:true, white:true, strict: false*/
               {kind: "XV.NumberSpinnerWidget", attr: "leadTime"},
               {kind: "XV.NumberSpinnerWidget", attr: "ranking"},
               {kind: "XV.DateWidget", attr: "effective",
-                nullValue: XT.date.startOfTime(),
-                nullText: "_always".loc()},
+               nullValue: XT.date.startOfTime(),
+               nullText: "_always".loc()},
               {kind: "XV.DateWidget", attr: "expires",
-                nullValue: XT.date.endOfTime(),
-                nullText: "_never".loc()},
+               nullValue: XT.date.endOfTime(),
+               nullText: "_never".loc()},
               {kind: "onyx.GroupboxHeader", content: "_notes".loc()},
               {kind: "XV.TextArea", attr: "notes", label: "_notes".loc()},
             ]}
-          ]},
-          {kind: "XV.Groupbox", name: "vendorPanel", title: "_vendor".loc(), components: [
-            {kind: "onyx.GroupboxHeader", content: "_vendor".loc()},
-            {kind: "XV.ScrollableGroupbox", name: "vendorGroup",
-              classes: "in-panel", fit: true, components: [
+         ]},
+         {kind: "XV.Groupbox", name: "vendorPanel", title: "_vendor".loc(), components: [
+           {kind: "onyx.GroupboxHeader", content: "_vendor".loc()},
+           {kind: "XV.ScrollableGroupbox", name: "vendorGroup",
+            classes: "in-panel", fit: true, components: [
               {kind: "XV.InputWidget", attr: "vendorItemNumber", label: "_number".loc()},
               {kind: "XV.UnitCombobox", attr: "vendorUnit", label: "_unit".loc(), showLabel: true},
               {kind: "XV.UnitRatioWidget", attr: "vendorUnitRatio", label: "_unitRatio".loc()},
@@ -515,77 +505,77 @@ trailing:true, white:true, strict: false*/
               {kind: "onyx.GroupboxHeader", content: "_description".loc()},
               {kind: "XV.TextArea", attr: "manufacturerItemDescription", fit: true}
             ]}
-          ]},
-          {kind: "XV.ItemSourcePriceBox", attr: "prices"}
-        ]}
-      ]
-    });
+         ]},
+         {kind: "XV.ItemSourcePriceBox", attr: "prices"}
+       ]}
+    ]
+  });
 
-    XV.registerModelWorkspace("XM.ItemSource", "XV.ItemSourceWorkspace");
+  XV.registerModelWorkspace("XM.ItemSource", "XV.ItemSourceWorkspace");
 
-    // TODO
+  // TODO
 
-    // ..........................................................
-    // PURCHASE EMAIL PROFILE
-    //
+  // ..........................................................
+  // PURCHASE EMAIL PROFILE
+  //
 
-    enyo.kind({
-      name: "XV.PurchaseEmailProfileWorkspace",
-      kind: "XV.EmailProfileWorkspace",
-      title: "_purchaseEmailProfile".loc(),
-      model: "XM.PurchaseEmailProfile",
-    });
+  enyo.kind({
+    name: "XV.PurchaseEmailProfileWorkspace",
+    kind: "XV.EmailProfileWorkspace",
+    title: "_purchaseEmailProfile".loc(),
+    model: "XM.PurchaseEmailProfile",
+  });
 
-    XV.registerModelWorkspace("XM.PurchaseEmailProfile", "XV.PurchaseEmailProfileWorkspace");
+  XV.registerModelWorkspace("XM.PurchaseEmailProfile", "XV.PurchaseEmailProfileWorkspace");
 
-    // ..........................................................
-    // PURCHASE TYPE
-    //
+  // ..........................................................
+  // PURCHASE TYPE
+  //
 
-    enyo.kind({
-      name: "XV.PurchaseTypeWorkspace",
-      kind: "XV.Workspace",
-      title: "_purchaseType".loc(),
-      model: "XM.PurchaseType",
-      components: [
-        {kind: "Panels", arrangerKind: "CarouselArranger",
-          fit: true, components: [
-          {kind: "XV.Groupbox", name: "mainPanel", components: [
-            {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
-            {kind: "XV.ScrollableGroupbox", name: "mainGroup",
-              classes: "in-panel", fit: true, components: [
+  enyo.kind({
+    name: "XV.PurchaseTypeWorkspace",
+    kind: "XV.Workspace",
+    title: "_purchaseType".loc(),
+    model: "XM.PurchaseType",
+    components: [
+      {kind: "Panels", arrangerKind: "CarouselArranger",
+       fit: true, components: [
+         {kind: "XV.Groupbox", name: "mainPanel", components: [
+           {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
+           {kind: "XV.ScrollableGroupbox", name: "mainGroup",
+            classes: "in-panel", fit: true, components: [
               {kind: "XV.InputWidget", attr: "code"},
               {kind: "XV.CheckboxWidget", attr: "isActive"},
               {kind: "XV.InputWidget", attr: "description"},
               {kind: "XV.PurchaseEmailProfilePicker", attr: "emailProfile"},
               {kind: "XV.PurchaseTypeCharacteristicsWidget", attr: "characteristics"}
             ]}
-          ]},
-          {kind: "XV.PurchaseTypeWorkflowBox", attr: "workflow"}
-        ]}
-      ]
-    });
+         ]},
+         {kind: "XV.PurchaseTypeWorkflowBox", attr: "workflow"}
+       ]}
+    ]
+  });
 
-    XV.registerModelWorkspace("XM.PurchaseType", "XV.PurchaseTypeWorkspace");
+  XV.registerModelWorkspace("XM.PurchaseType", "XV.PurchaseTypeWorkspace");
 
-    // ..........................................................
-    // PURCHASE ORDER
-    //
+  // ..........................................................
+  // PURCHASE ORDER
+  //
 
-    enyo.kind({
-      name: "XV.PurchaseOrderWorkspace",
-      kind: "XV.Workspace",
-      title: "_purchaseOrder".loc(),
-      model: "XM.PurchaseOrder",
-      printOnSaveSetting: "DefaultPrintPOOnSave",
-      headerAttrs: ["number", "-", "vendor.name"],
-      components: [
-        {kind: "Panels", arrangerKind: "CarouselArranger",
-          fit: true, components: [
-          {kind: "XV.Groupbox", name: "mainPanel", components: [
-            {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
-            {kind: "XV.ScrollableGroupbox", name: "mainGroup", fit: true,
-              classes: "in-panel", components: [
+  enyo.kind({
+    name: "XV.PurchaseOrderWorkspace",
+    kind: "XV.Workspace",
+    title: "_purchaseOrder".loc(),
+    model: "XM.PurchaseOrder",
+    printOnSaveSetting: "DefaultPrintPOOnSave",
+    headerAttrs: ["number", "-", "vendor.name"],
+    components: [
+      {kind: "Panels", arrangerKind: "CarouselArranger",
+       fit: true, components: [
+         {kind: "XV.Groupbox", name: "mainPanel", components: [
+           {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
+           {kind: "XV.ScrollableGroupbox", name: "mainGroup", fit: true,
+            classes: "in-panel", components: [
               {kind: "XV.InputWidget", attr: "number"},
               {kind: "XV.DateWidget", attr: "orderDate"},
               {kind: "XV.DateWidget", attr: "releaseDate"},
@@ -593,126 +583,126 @@ trailing:true, white:true, strict: false*/
               {kind: "onyx.GroupboxHeader", content: "_source".loc()},
               {kind: "XV.PurchaseVendorWidget", attr: "vendor"},
               {kind: "XV.VendorAddressWidget", attr: "vendorAddress",
-                label: "_address".loc()},
+               label: "_address".loc()},
               {kind: "XV.AddressFieldsWidget",
-                name: "vendorAddressFieldsWidget", attr:
-                {name: "vendorAddressCode",
-                  line1: "vendorAddress1",
-                  line2: "vendorAddress2", line3: "vendorAddress3",
-                  city: "vendorCity", state: "vendorState",
-                  postalCode: "vendorPostalCode", country: "vendorCountry"}
+               name: "vendorAddressFieldsWidget", attr:
+               {name: "vendorAddressCode",
+                line1: "vendorAddress1",
+                line2: "vendorAddress2", line3: "vendorAddress3",
+                city: "vendorCity", state: "vendorState",
+                postalCode: "vendorPostalCode", country: "vendorCountry"}
               },
               {kind: "XV.ContactWidget", attr: "vendorContact",
-                name: "vendorContactWidget"},
+               name: "vendorContactWidget"},
               {kind: "onyx.GroupboxHeader", content: "_shipTo".loc()},
               {kind: "XV.SitePicker", attr: "site", showNone: false},
               {kind: "XV.AddressFieldsWidget",
-                name: "destinationAddressWidget", attr:
-                {line1: "shiptoAddress1",
-                  line2: "shiptoAddress2", line3: "shiptoAddress3",
-                  city: "shiptoCity", state: "shiptoState",
-                  postalCode: "shiptoPostalCode", country: "shiptoCountry"}
+               name: "destinationAddressWidget", attr:
+               {line1: "shiptoAddress1",
+                line2: "shiptoAddress2", line3: "shiptoAddress3",
+                city: "shiptoCity", state: "shiptoState",
+                postalCode: "shiptoPostalCode", country: "shiptoCountry"}
               },
               {kind: "XV.ContactWidget", attr: "shiptoContact",
-                name: "shiptoContactWidget"},
+               name: "shiptoContactWidget"},
               {kind: "onyx.GroupboxHeader", content: "_notes".loc()},
               {kind: "XV.TextArea", attr: "notes", fit: true}
             ]}
-          ]},
-          {kind: "FittableRows", title: "_lineItems".loc(), name: "lineItemsPanel"},
-          {kind: "XV.Groupbox", name: "settingsPanel", title: "_settings".loc(),
-            components: [
+         ]},
+         {kind: "FittableRows", title: "_lineItems".loc(), name: "lineItemsPanel"},
+         {kind: "XV.Groupbox", name: "settingsPanel", title: "_settings".loc(),
+          components: [
             {kind: "onyx.GroupboxHeader", content: "_settings".loc()},
             {kind: "XV.ScrollableGroupbox", name: "settingsGroup",
-                classes: "in-panel", fit: true, components: [
-              {name: "settingsControl", components: [
-                {kind: "XV.PurchaseOrderStatusPicker", attr: "status"},
-                {kind: "XV.PurchaseTypePicker", attr: "purchaseType"},
-                {kind: "XV.TermsPicker", attr: "terms"},
-                {kind: "XV.TaxZonePicker", attr: "taxZone"},
-                {kind: "XV.AgentPicker", attr: "agent"},
-                {kind: "XV.InputWidget", attr: "incoterms"},
-                {kind: "XV.ShipViaCombobox", attr: "shipVia"},
-                {kind: "XV.PurchaseOrderCharacteristicsWidget", attr: "characteristics"},
-              ]}
-            ]}
+             classes: "in-panel", fit: true, components: [
+               {name: "settingsControl", components: [
+                 {kind: "XV.PurchaseOrderStatusPicker", attr: "status"},
+                 {kind: "XV.PurchaseTypePicker", attr: "purchaseType"},
+                 {kind: "XV.TermsPicker", attr: "terms"},
+                 {kind: "XV.TaxZonePicker", attr: "taxZone"},
+                 {kind: "XV.AgentPicker", attr: "agent"},
+                 {kind: "XV.InputWidget", attr: "incoterms"},
+                 {kind: "XV.ShipViaCombobox", attr: "shipVia"},
+                 {kind: "XV.PurchaseOrderCharacteristicsWidget", attr: "characteristics"},
+               ]}
+             ]}
           ]},
-          {kind: "FittableRows", title: "_workflow".loc(), name: "workflowPanel"},
-          {kind: "XV.PurchaseOrderCommentBox", attr: "comments"}
-        ]}
-      ],
-      attributesChanged: function (inSender, inEvent) {
-        this.inherited(arguments);
+         {kind: "FittableRows", title: "_workflow".loc(), name: "workflowPanel"},
+         {kind: "XV.PurchaseOrderCommentBox", attr: "comments"}
+       ]}
+    ],
+    attributesChanged: function (inSender, inEvent) {
+      this.inherited(arguments);
+      this.vendorChanged();
+    },
+    controlValueChanged: function (inSender, inEvent) {
+      this.inherited(arguments);
+      if (inEvent.originator.name === "vendorWidget") {
         this.vendorChanged();
-      },
-      controlValueChanged: function (inSender, inEvent) {
-        this.inherited(arguments);
-        if (inEvent.originator.name === "vendorWidget") {
-          this.vendorChanged();
-        }
-      },
-      create: function () {
-        this.inherited(arguments);
-        if (enyo.platform.touch) {
-          this.$.lineItemsPanel.createComponents([
-            {kind: "XV.PurchaseOrderLineBox", name: "purchaseOrderLineItemBox",
-              attr: "lineItems", fit: true}
-          ], {owner: this});
-          this.$.workflowPanel.createComponents([
-            {kind: "XV.PurchaseOrderWorkflowBox", attr: "workflow", fit: true}
-          ], {owner: this});
-        } else {
-          this.$.lineItemsPanel.createComponents([
-            {kind: "XV.PurchaseOrderLineGridBox", name: "purchaseOrderLineItemBox",
-              attr: "lineItems", fit: true}
-          ], {owner: this});
-          this.$.workflowPanel.createComponents([
-            {kind: "XV.PurchaseOrderWorkflowGridBox", attr: "workflow", fit: true}
-          ], {owner: this});
-        }
-        this.processExtensions(true);
-      },
-      vendorChanged: function () {
-        var vendor = this.$.purchaseVendorWidget.getValue();
-        if (vendor) {
-          this.$.vendorContactWidget.addParameter({
-            attribute: ["account", "accountParent"],
-            value: vendor.id
-          }, true);
-
-          this.$.vendorAddressWidget.setDisabled(false);
-          this.$.vendorAddressWidget.addParameter({
-            attribute: "vendor",
-            value: vendor.id
-          });
-        } else {
-          this.$.vendorContactWidget.removeParameter("account");
-          this.$.vendorAddressWidget.setDisabled(true);
-        }
       }
-    });
+    },
+    create: function () {
+      this.inherited(arguments);
+      if (enyo.platform.touch) {
+        this.$.lineItemsPanel.createComponents([
+          {kind: "XV.PurchaseOrderLineBox", name: "purchaseOrderLineItemBox",
+           attr: "lineItems", fit: true}
+        ], {owner: this});
+        this.$.workflowPanel.createComponents([
+          {kind: "XV.PurchaseOrderWorkflowBox", attr: "workflow", fit: true}
+        ], {owner: this});
+      } else {
+        this.$.lineItemsPanel.createComponents([
+          {kind: "XV.PurchaseOrderLineGridBox", name: "purchaseOrderLineItemBox",
+           attr: "lineItems", fit: true}
+        ], {owner: this});
+        this.$.workflowPanel.createComponents([
+          {kind: "XV.PurchaseOrderWorkflowGridBox", attr: "workflow", fit: true}
+        ], {owner: this});
+      }
+      this.processExtensions(true);
+    },
+    vendorChanged: function () {
+      var vendor = this.$.purchaseVendorWidget.getValue();
+      if (vendor) {
+        this.$.vendorContactWidget.addParameter({
+          attribute: ["account", "accountParent"],
+          value: vendor.id
+        }, true);
 
-    XV.registerModelWorkspace("XM.PurchaseOrder", "XV.PurchaseOrderWorkspace");
-    XV.registerModelWorkspace("XM.PurchaseOrderWorkflow", "XV.PurchaseOrderWorkspace");
-    XV.registerModelWorkspace("XM.PurchaseOrderRelation", "XV.PurchaseOrderWorkspace");
-    XV.registerModelWorkspace("XM.PurchaseOrderListItem", "XV.PurchaseOrderWorkspace");
+        this.$.vendorAddressWidget.setDisabled(false);
+        this.$.vendorAddressWidget.addParameter({
+          attribute: "vendor",
+          value: vendor.id
+        });
+      } else {
+        this.$.vendorContactWidget.removeParameter("account");
+        this.$.vendorAddressWidget.setDisabled(true);
+      }
+    }
+  });
 
-    // ..........................................................
-    // PURCHASE ORDER WORKFLOW
-    //
+  XV.registerModelWorkspace("XM.PurchaseOrder", "XV.PurchaseOrderWorkspace");
+  XV.registerModelWorkspace("XM.PurchaseOrderWorkflow", "XV.PurchaseOrderWorkspace");
+  XV.registerModelWorkspace("XM.PurchaseOrderRelation", "XV.PurchaseOrderWorkspace");
+  XV.registerModelWorkspace("XM.PurchaseOrderListItem", "XV.PurchaseOrderWorkspace");
 
-    enyo.kind({
-      name: "XV.PurchaseOrderWorkflowWorkspace",
-      kind: "XV.ChildWorkspace",
-      title: "_purchaseOrderWorkflow".loc(),
-      model: "XM.PurchaseOrderWorkflow",
-      components: [
-        {kind: "Panels", arrangerKind: "CarouselArranger",
-          classes: "xv-top-panel", fit: true, components: [
-          {kind: "XV.Groupbox", name: "mainPanel", components: [
-            {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
-            {kind: "XV.ScrollableGroupbox", name: "mainGroup", fit: true,
-              classes: "in-panel", components: [
+  // ..........................................................
+  // PURCHASE ORDER WORKFLOW
+  //
+
+  enyo.kind({
+    name: "XV.PurchaseOrderWorkflowWorkspace",
+    kind: "XV.ChildWorkspace",
+    title: "_purchaseOrderWorkflow".loc(),
+    model: "XM.PurchaseOrderWorkflow",
+    components: [
+      {kind: "Panels", arrangerKind: "CarouselArranger",
+       classes: "xv-top-panel", fit: true, components: [
+         {kind: "XV.Groupbox", name: "mainPanel", components: [
+           {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
+           {kind: "XV.ScrollableGroupbox", name: "mainGroup", fit: true,
+            classes: "in-panel", components: [
               {kind: "XV.InputWidget", attr: "name"},
               {kind: "XV.InputWidget", attr: "description"},
               {kind: "XV.PurchaseOrderWorkflowTypePicker", attr: "workflowType"},
@@ -730,49 +720,49 @@ trailing:true, white:true, strict: false*/
               {kind: "onyx.GroupboxHeader", content: "_notes".loc()},
               {kind: "XV.TextArea", attr: "notes", fit: true}
             ]}
-          ]},
-          {kind: "XV.Groupbox", name: "onCompletedPanel", title: "_completionActions".loc(),
-            components: [
+         ]},
+         {kind: "XV.Groupbox", name: "onCompletedPanel", title: "_completionActions".loc(),
+          components: [
             {kind: "onyx.GroupboxHeader", content: "_onCompletion".loc()},
             {kind: "XV.ScrollableGroupbox", name: "completionGroup", fit: true,
-              classes: "in-panel", components: [
-              {kind: "XV.PurchaseOrderStatusPicker", attr: "completedParentStatus",
+             classes: "in-panel", components: [
+               {kind: "XV.PurchaseOrderStatusPicker", attr: "completedParentStatus",
                 noneText: "_noChange".loc(), label: "_nextStatus".loc()},
-              {kind: "XV.DependenciesWidget",
+               {kind: "XV.DependenciesWidget",
                 attr: {workflow: "parent.workflow", successors: "completedSuccessors"}}
-            ]}
+             ]}
           ]},
-          {kind: "XV.Groupbox", name: "onDeferredPanel", title: "_deferredActions".loc(),
-            components: [
+         {kind: "XV.Groupbox", name: "onDeferredPanel", title: "_deferredActions".loc(),
+          components: [
             {kind: "onyx.GroupboxHeader", content: "_onDeferred".loc()},
             {kind: "XV.ScrollableGroupbox", name: "deferredGroup", fit: true,
-              classes: "in-panel", components: [
-              {kind: "XV.PurchaseOrderStatusPicker", attr: "completedParentStatus",
+             classes: "in-panel", components: [
+               {kind: "XV.PurchaseOrderStatusPicker", attr: "completedParentStatus",
                 noneText: "_noChange".loc(), label: "_nextStatus".loc()},
-              {kind: "XV.DependenciesWidget",
+               {kind: "XV.DependenciesWidget",
                 attr: {workflow: "parent.workflow", successors: "deferredSuccessors"}}
-            ]}
+             ]}
           ]}
-        ]}
-      ]
-    });
+       ]}
+    ]
+  });
 
-    // ..........................................................
-    // PURCHASE ORDER LINE
-    //
+  // ..........................................................
+  // PURCHASE ORDER LINE
+  //
 
-    enyo.kind({
-      name: "XV.PurchaseOrderLineWorkspace",
-      kind: "XV.ChildWorkspace",
-      title: "_purchaseOrderLine".loc(),
-      model: "XM.PurchaseOrderLine",
-      components: [
-        {kind: "Panels", arrangerKind: "CarouselArranger",
-          classes: "xv-top-panel", fit: true, components: [
-          {kind: "XV.Groupbox", name: "mainPanel", components: [
-            {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
-            {kind: "XV.ScrollableGroupbox", name: "mainGroup", fit: true,
-              classes: "in-panel", components: [
+  enyo.kind({
+    name: "XV.PurchaseOrderLineWorkspace",
+    kind: "XV.ChildWorkspace",
+    title: "_purchaseOrderLine".loc(),
+    model: "XM.PurchaseOrderLine",
+    components: [
+      {kind: "Panels", arrangerKind: "CarouselArranger",
+       classes: "xv-top-panel", fit: true, components: [
+         {kind: "XV.Groupbox", name: "mainPanel", components: [
+           {kind: "onyx.GroupboxHeader", content: "_overview".loc()},
+           {kind: "XV.ScrollableGroupbox", name: "mainGroup", fit: true,
+            classes: "in-panel", components: [
               {kind: "XV.InputWidget", attr: "lineNumber"},
               {kind: "XV.ItemSiteWidget", attr: {item: "item", site: "site"}},
               {kind: "XV.CheckboxWidget", attr: "isMiscellaneous"},
@@ -789,254 +779,250 @@ trailing:true, white:true, strict: false*/
               {kind: "onyx.GroupboxHeader", content: "_notes".loc()},
               {kind: "XV.TextArea", attr: "notes", fit: true}
             ]}
-          ]},
-          {kind: "XV.Groupbox", name: "pricePanel", title: "_price".loc(),
-            components: [
+         ]},
+         {kind: "XV.Groupbox", name: "pricePanel", title: "_price".loc(),
+          components: [
             {kind: "onyx.GroupboxHeader", content: "_price".loc()},
             {kind: "XV.ScrollableGroupbox", name: "priceGroup", fit: true,
-              classes: "in-panel", components: [
-              {kind: "XV.MoneyWidget",
+             classes: "in-panel", components: [
+               {kind: "XV.MoneyWidget",
                 attr: {localValue: "price", currency: "currency"},
                 scale: XT.PURCHASE_PRICE_SCALE,
                 label: "_unitPrice".loc(), currencyShowing: true,
                 currencyDisabled: true},
-              {kind: "XV.MoneyWidget",
+               {kind: "XV.MoneyWidget",
                 attr: {localValue: "extendedPrice", currency: "currency"},
                 label: "_extendedPrice".loc(), currencyShowing: true,
                 currencyDisabled: true},
-              {kind: "XV.MoneyWidget",
+               {kind: "XV.MoneyWidget",
                 attr: {localValue: "freight", currency: "currency"},
                 label: "_freight".loc(), currencyShowing: true,
                 currencyDisabled: true},
-              {kind: "onyx.GroupboxHeader", content: "_tax".loc()},
-              {kind: "XV.TaxTypePicker", attr: "taxType"},
-              {kind: "XV.MoneyWidget",
+               {kind: "onyx.GroupboxHeader", content: "_tax".loc()},
+               {kind: "XV.TaxTypePicker", attr: "taxType"},
+               {kind: "XV.MoneyWidget",
                 attr: {localValue: "tax", currency: "currency"},
                 scale: XT.PURCHASE_PRICE_SCALE,
                 label: "_tax".loc(), currencyShowing: true,
                 currencyDisabled: true},
-              {kind: "XV.PurchaseOrderLineCharacteristicsWidget",
+               {kind: "XV.PurchaseOrderLineCharacteristicsWidget",
                 attr: "characteristics"}
-            ]}
+             ]}
           ]},
-          {kind: "XV.Groupbox", name: "vendorPanel", title: "_itemSource".loc(),
-            components: [
+         {kind: "XV.Groupbox", name: "vendorPanel", title: "_itemSource".loc(),
+          components: [
             {kind: "onyx.GroupboxHeader", content: "_vendor".loc()},
             {kind: "XV.ScrollableGroupbox", name: "itemSourceGroup", fit: true,
-              classes: "in-panel", components: [
-              {kind: "XV.ItemSourceWidget", label: "_number".loc(),
+             classes: "in-panel", components: [
+               {kind: "XV.ItemSourceWidget", label: "_number".loc(),
                 attr: {itemSource: "itemSource", vendorItemNumber: "vendorItemNumber"}},
-              {kind: "XV.InputWidget", attr: "vendorUnit", label: "_unit".loc()},
-              {kind: "XV.InputWidget", attr: "vendorUnitRatio", label: "_unitRatio".loc()},
-              {kind: "onyx.GroupboxHeader", content: "_description".loc()},
-              {kind: "XV.TextArea", attr: "vendorItemDescription", label: "_description".loc()},
-              {kind: "onyx.GroupboxHeader", content: "_manufacturer".loc()},
-              {kind: "XV.ItemSourceManufacturerCombobox", attr: "manufacturerName", label: "_name".loc()},
-              {kind: "XV.InputWidget", attr: "manufacturerItemNumber", label: "_itemNumber".loc()},
-              {kind: "onyx.GroupboxHeader", content: "_description".loc()},
-              {kind: "XV.TextArea", attr: "manufacturerItemDescription", fit: true}
-            ]}
+               {kind: "XV.InputWidget", attr: "vendorUnit", label: "_unit".loc()},
+               {kind: "XV.InputWidget", attr: "vendorUnitRatio", label: "_unitRatio".loc()},
+               {kind: "onyx.GroupboxHeader", content: "_description".loc()},
+               {kind: "XV.TextArea", attr: "vendorItemDescription", label: "_description".loc()},
+               {kind: "onyx.GroupboxHeader", content: "_manufacturer".loc()},
+               {kind: "XV.ItemSourceManufacturerCombobox", attr: "manufacturerName", label: "_name".loc()},
+               {kind: "XV.InputWidget", attr: "manufacturerItemNumber", label: "_itemNumber".loc()},
+               {kind: "onyx.GroupboxHeader", content: "_description".loc()},
+               {kind: "XV.TextArea", attr: "manufacturerItemDescription", fit: true}
+             ]}
           ]},
-          {kind: "XV.PurchaseOrderLineCommentBox", attr: "comments"}
-        ]}
-      ]
-    });
+         {kind: "XV.PurchaseOrderLineCommentBox", attr: "comments"}
+       ]}
+    ]
 
-  };
-}());
-/*jshint bitwise:true, indent:2, curly:true, eqeqeq:true, immed:true,
-latedef:true, newcap:true, noarg:true, regexp:true, undef:true,
-trailing:true, white:true*/
-/*global XT:true, XM:true, XV:true, enyo:true*/
+    
+    
+  });
 
-(function () {
+  var extensions;
 
-  XT.extensions.sales.initWorkspaces = function () {
-    var extensions;
+  // ..........................................................
+  // ACCOUNT
+  //
 
-    // ..........................................................
-    // ACCOUNT
-    //
-
-    // Intercept calls to create customers and make sure prospects get properly
-    // "converted" to customers.
-    var proto = XV.AccountWorkspace.prototype;
-    proto.kindHandlers.onWorkspace = "workspace";
-    proto.workspace = function (inSender, inEvent) {
-      var model = this.getValue(),
+  // Intercept calls to create customers and make sure prospects get properly
+  // "converted" to customers.
+  var proto = XV.AccountWorkspace.prototype;
+  proto.kindHandlers.onWorkspace = "workspace";
+  proto.workspace = function (inSender, inEvent) {
+    var model = this.getValue(),
         prospect = model ? model.get("prospect") : false;
-      if (inEvent.workspace === "XV.CustomerWorkspace" &&
-          prospect &&
-          !this._passThrough) {
-        inEvent.success = function () {
-          this.getValue().convertFromProspect(prospect.id);
-        };
-        this._passThrough = true;
-        this.bubble("onWorkspace", inEvent, this);
-        return true;
-      }
-      this._passThrough = false;
-    };
+    if (inEvent.workspace === "XV.CustomerWorkspace" &&
+        prospect &&
+        !this._passThrough) {
+      inEvent.success = function () {
+        this.getValue().convertFromProspect(prospect.id);
+      };
+      this._passThrough = true;
+      this.bubble("onWorkspace", inEvent, this);
+      return true;
+    }
+    this._passThrough = false;
+  };
 
-    // ..........................................................
-    // CONFIGURE
-    //
-    enyo.kind({
-      name: "XV.SalesWorkspace",
-      kind: "XV.Workspace",
-      title: "_configure".loc() + " " + "_sales".loc(),
-      model: "XM.Sales",
-      components: [
-        {kind: "Panels", arrangerKind: "CarouselArranger",
-          fit: true, components: [
-          {kind: "XV.Groupbox", name: "mainPanel", components: [
-            {kind: "XV.ScrollableGroupbox", name: "mainGroup", fit: true,
-              classes: "in-panel", components: [
+  // ..........................................................
+  // CONFIGURE
+  //
+  enyo.kind({
+    name: "XV.SalesWorkspace",
+    kind: "XV.Workspace",
+    title: "_configure".loc() + " " + "_sales".loc(),
+    model: "XM.Sales",
+    components: [
+      {kind: "Panels", arrangerKind: "CarouselArranger",
+       fit: true, components: [
+         {kind: "XV.Groupbox", name: "mainPanel", components: [
+           {kind: "XV.ScrollableGroupbox", name: "mainGroup", fit: true,
+            classes: "in-panel", components: [
 
               {kind: "onyx.GroupboxHeader", content: "_salesOrder".loc()},
               {kind: "XV.NumberPolicyPicker", attr: "CONumberGeneration",
-                label: "_number".loc() + " " + "_policy".loc()},
+               label: "_number".loc() + " " + "_policy".loc()},
               {kind: "XV.NumberWidget", attr: "NextSalesOrderNumber",
-                label: "_nextNumber".loc(), formatting: false},
+               label: "_nextNumber".loc(), formatting: false},
               {kind: "XV.ToggleButtonWidget", attr: "DefaultPrintSOOnSave",
-                label: "_printOnSave".loc()},
+               label: "_printOnSave".loc()},
 
               {kind: "onyx.GroupboxHeader", content: "_quote".loc()},
               {kind: "XV.NumberPolicyPicker", attr: "QUNumberGeneration",
-                label: "_number".loc() + " " + "_policy".loc()},
+               label: "_number".loc() + " " + "_policy".loc()},
               {kind: "XV.NumberWidget", attr: "NextQuoteNumber",
-                label: "_nextNumber".loc(), formatting: false},
+               label: "_nextNumber".loc(), formatting: false},
               {kind: "XV.ToggleButtonWidget", attr: "ShowQuotesAfterSO",
-                label: "_showQuotesAfterConverted".loc()},
+               label: "_showQuotesAfterConverted".loc()},
 
               {kind: "onyx.GroupboxHeader", content: "_creditMemo".loc()},
               {kind: "XV.NumberPolicyPicker", attr: "CMNumberGeneration",
-                label: "_number".loc() + " " + "_policy".loc()},
+               label: "_number".loc() + " " + "_policy".loc()},
               {kind: "XV.NumberWidget", attr: "NextCreditMemoNumber",
-                label: "_nextNumber".loc(), formatting: false},
+               label: "_nextNumber".loc(), formatting: false},
 
               {kind: "onyx.GroupboxHeader", content: "_invoice".loc()},
               {kind: "XV.NumberPolicyPicker", attr: "InvcNumberGeneration",
-                label: "_number".loc() + " " + "_policy".loc()},
+               label: "_number".loc() + " " + "_policy".loc()},
               {kind: "XV.NumberWidget", attr: "NextInvoiceNumber",
-                label: "_nextNumber".loc(), formatting: false},
+               label: "_nextNumber".loc(), formatting: false},
               // Not bothering to define a kind
               {kind: "XV.PickerWidget", attr: "InvoiceDateSource",
-                label: "_invoiceDateSource".loc(), collection: "XM.invoiceDateSources"},
+               label: "_invoiceDateSource".loc(), collection: "XM.invoiceDateSources"},
 
               {kind: "onyx.GroupboxHeader", content: "_dateControl".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "AllowASAPShipSchedules",
-                label: "_allowASAPShipSchedules".loc()},
+               label: "_allowASAPShipSchedules".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "UsePromiseDate",
-                label: "_usePromiseDates".loc()},
+               label: "_usePromiseDates".loc()},
 
               {kind: "onyx.GroupboxHeader", content: "_changeLog".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "CustomerChangeLog",
-                label: "_postCustomerChanges".loc()},
+               label: "_postCustomerChanges".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "SalesOrderChangeLog",
-                label: "_postSalesOrderChanges".loc()},
+               label: "_postSalesOrderChanges".loc()},
 
               {kind: "onyx.GroupboxHeader", content: "_shipControl".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "AlwaysShowSaveAndAdd",
-                label: "_showSaveAndAddbutton".loc()},
+               label: "_showSaveAndAddbutton".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "FirmSalesOrderPackingList",
-                label: "_firmSalesOrdersWhenAddedToPackingList".loc()},
+               label: "_firmSalesOrdersWhenAddedToPackingList".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "EnableSOShipping",
-                label: "_enableSOShipping".loc()},
+               label: "_enableSOShipping".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "AutoSelectForBilling",
-                label: "_autoSelectForBilling".loc()},
+               label: "_autoSelectForBilling".loc()},
 
               {kind: "onyx.GroupboxHeader", content: "_creditControl".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "RestrictCreditMemos",
-                label: "_restrictCreditMemos".loc()},
+               label: "_restrictCreditMemos".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "AutoAllocateCreditMemos",
-                label: "_autoAllocateCreditMemos".loc()}
+               label: "_autoAllocateCreditMemos".loc()}
             ]}
-          ]},
-          {kind: "XV.Groupbox", name: "pricePanel", title: "_pricing".loc(), components: [
-            {kind: "XV.ScrollableGroupbox", name: "priceGroup", fit: true,
-              classes: "in-panel", components: [
+         ]},
+         {kind: "XV.Groupbox", name: "pricePanel", title: "_pricing".loc(), components: [
+           {kind: "XV.ScrollableGroupbox", name: "priceGroup", fit: true,
+            classes: "in-panel", components: [
               {kind: "onyx.GroupboxHeader", content: "_priceControl".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "AllowDiscounts",
-                label: "_allowDiscounts".loc()},
+               label: "_allowDiscounts".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "DisableSalesOrderPriceOverride",
-                label: "_disableSalesOrderPriceOverride".loc()},
+               label: "_disableSalesOrderPriceOverride".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "HideSOMiscCharge",
-                label: "_hideSOMiscCharge".loc()},
+               label: "_hideSOMiscCharge".loc()},
               // Not bothering to define a kind
               {kind: "XV.PickerWidget", attr: "soPriceEffective",
-                label: "_priceEffectiveDate".loc(), collection: "XM.priceEffectiveDates"},
+               label: "_priceEffectiveDate".loc(), collection: "XM.priceEffectiveDates"},
               {kind: "onyx.GroupboxHeader", content: "_freightPricing".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "CalculateFreight",
-                label: "_useCalculatedFreightPricing".loc()},
+               label: "_useCalculatedFreightPricing".loc()},
               {kind: "XV.ToggleButtonWidget", attr: "IncludePackageWeight",
-                label: "_includePackageWeight".loc()},
+               label: "_includePackageWeight".loc()},
               // Not bothering to define a kind
               {kind: "XV.PickerWidget", attr: "UpdatePriceLineEdit",
-                label: "_pricingOnLineItemEdits".loc(), collection: "XM.lineItemEditBehaviors"},
+               label: "_pricingOnLineItemEdits".loc(), collection: "XM.lineItemEditBehaviors"},
               {kind: "XV.ToggleButtonWidget", attr: "IgnoreCustDisc",
-                label: "_ignoreIfDiscounted".loc()}
+               label: "_ignoreIfDiscounted".loc()}
             ]}
-          ]},
-          {kind: "XV.Groupbox", name: "defaultsPanel", title: "_customerDefaults".loc(),
-              components: [
+         ]},
+         {kind: "XV.Groupbox", name: "defaultsPanel", title: "_customerDefaults".loc(),
+          components: [
             {kind: "XV.ScrollableGroupbox", name: "defaultsGroup", fit: true,
-              classes: "in-panel", components: [
-              {kind: "onyx.GroupboxHeader", content: "_customerDefaults".loc()},
-              {kind: "XV.CustomerTypePicker", attr: "DefaultCustType",
+             classes: "in-panel", components: [
+               {kind: "onyx.GroupboxHeader", content: "_customerDefaults".loc()},
+               {kind: "XV.CustomerTypePicker", attr: "DefaultCustType",
                 label: "_customerType".loc()},
-              {kind: "XV.SalesRepPicker", attr: "DefaultSalesRep",
+               {kind: "XV.SalesRepPicker", attr: "DefaultSalesRep",
                 label: "_salesRep".loc()},
-              {kind: "XV.ShipViaPicker", attr: "DefaultShipViaId",
+               {kind: "XV.ShipViaPicker", attr: "DefaultShipViaId",
                 label: "_shipVia".loc()},
-              {kind: "XV.TermsPicker", attr: "DefaultTerms",
+               {kind: "XV.TermsPicker", attr: "DefaultTerms",
                 label: "_terms".loc()},
-              {kind: "XV.BalanceMethodPicker", attr: "DefaultBalanceMethod",
+               {kind: "XV.BalanceMethodPicker", attr: "DefaultBalanceMethod",
                 label: "_balanceMethod".loc()},
-              {kind: "XV.ToggleButtonWidget", attr: "DefaultPartialShipments",
+               {kind: "XV.ToggleButtonWidget", attr: "DefaultPartialShipments",
                 label: "_acceptsPartialShipments".loc()},
-              {kind: "XV.ToggleButtonWidget", attr: "DefaultBackOrders",
+               {kind: "XV.ToggleButtonWidget", attr: "DefaultBackOrders",
                 label: "_acceptsBackOrders".loc()},
-              {kind: "XV.ToggleButtonWidget", attr: "DefaultFreeFormShiptos",
+               {kind: "XV.ToggleButtonWidget", attr: "DefaultFreeFormShiptos",
                 label: "_allowFreeFormShiptos".loc()},
-              {kind: "XV.NumberWidget", attr: "SOCreditLimit",
+               {kind: "XV.NumberWidget", attr: "SOCreditLimit",
                 label: "_creditLimit".loc()},
-              {kind: "XV.InputWidget", attr: "SOCreditRate",
+               {kind: "XV.InputWidget", attr: "SOCreditRate",
                 label: "_creditRating".loc()}
-            ]}
+             ]}
           ]}
-        ]}
-      ]
-    });
+       ]}
+    ]
+  });
 
-    // ..........................................................
-    // INVOICE
-    //
+  // ..........................................................
+  // INVOICE
+  //
 
-    extensions = [
-      {kind: "XV.MoneyWidget",
-        attr: {localValue: "authorizedCredit", currency: "currency"},
-        label: "_authorizedCredit".loc(), currencyShowing: false,
-        container: "invoiceLineItemBox.summaryPanel.summaryColumnOne",
-        defer: true},
-      {kind: "XV.InputWidget", container: "mainSubgroup", addBefore: "isPosted",
-        attr: "orderNumber"},
-      {kind: "XV.DateWidget", container: "mainSubgroup", addBefore: "isPosted",
-        attr: "orderDate"}
-    ];
-    XV.appendExtension("XV.InvoiceWorkspace", extensions);
+  extensions = [
+    {kind: "XV.MoneyWidget",
+     attr: {localValue: "authorizedCredit", currency: "currency"},
+     label: "_authorizedCredit".loc(), currencyShowing: false,
+     container: "invoiceLineItemBox.summaryPanel.summaryColumnOne",
+     defer: true},
+    {kind: "XV.InputWidget", container: "mainSubgroup", addBefore: "isPosted",
+     attr: "orderNumber"},
+    {kind: "XV.DateWidget", container: "mainSubgroup", addBefore: "isPosted",
+     attr: "orderDate"}
+  ];
+  XV.appendExtension("XV.InvoiceWorkspace", extensions);
 
-    // ..........................................................
-    // OPPORTUNITY
-    //
+  // ..........................................................
+  // OPPORTUNITY
+  //
 
-    extensions = [
-      {kind: "XV.OpportunityQuoteListRelationsBox", container: "panels", attr: "quoteRelations"},
-      {kind: "XV.OpportunitySalesOrderListRelationsBox", container: "panels",
-        attr: "salesOrderRelations"}
-    ];
-    XV.appendExtension("XV.OpportunityWorkspace", extensions);
+  extensions = [
+    {kind: "XV.OpportunityQuoteListRelationsBox", container: "panels", attr: "quoteRelations"},
+    {kind: "XV.OpportunitySalesOrderListRelationsBox", container: "panels",
+     attr: "salesOrderRelations"}
+  ];
+  XV.appendExtension("XV.OpportunityWorkspace", extensions);
 
-  };
 
 }());
+/*jshint bitwise:true, indent:2, curly:true, eqeqeq:true, immed:true,
+latedef:true, newcap:true, noarg:true, regexp:true, undef:true,
+trailing:true, white:true, strict: false*/
+/*global XT:true, XM:true, XV:true, enyo:true, Globalize: true, _:true*/

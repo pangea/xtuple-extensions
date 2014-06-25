@@ -3,7 +3,7 @@ newcap:true, noarg:true, regexp:true, undef:true, strict:true, trailing:true,
 white:true, expr:true */
 /*global XT:true, XM:true, _:true, Globalize:true */
 
-XT.extensions.billing.initReceivableModel = function () {
+XT.extensions.accounting.initReceivableModel = function () {
   'use strict';
 
   /**
