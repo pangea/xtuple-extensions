@@ -194,10 +194,38 @@
         {name: "itemGroupList", kind: "XV.ItemGroupList"},
         {name: "reasonCodeList", kind: "XV.ReasonCodeList"},
         {name: "salesCategoryList", kind: "XV.SalesCategoryList"},
-        {name: "termsList", kind: "XV.TermsList"}
+        {name: "termsList", kind: "XV.TermsList"},
+        {name: "honorificList", kind: "XV.HonorificList"},
+        {name: "expenseCategoryList", kind: "XV.ExpenseCategoryList"},  
+        {name: "classCodeList", kind: "XV.ClassCodeList"},
+        {name: "unitList", kind: "XV.UnitList"},
+        {name: "stateList", kind: "XV.StateList"},
+        {name: "countryList", kind: "XV.CountryList"},
+        {name: "purchaseEmailProfileList", kind: "XV.PurchaseEmailProfileList"},
+        {name: "purchaseTypeList", kind: "XV.PurchaseTypeList"},
+        {name: "siteList", kind: "XV.SiteList"},
+        {name: "siteTypeList", kind: "XV.SiteTypeList"},
+        {name: "saleTypeList", kind: "XV.SaleTypeList"},
+        {name: "salesEmailProfileList", kind: "XV.SalesEmailProfileList"},
+        {name: "shipViaList", kind: "XV.ShipViaList"},
+        {name: "shipZoneList", kind: "XV.ShipZoneList"},
+        {name: "salesRepList", kind: "XV.SalesRepList"},
+        {name: "taxAssignmentList", kind: "XV.TaxAssignmentList"},
+        {name: "taxAuthorityList", kind: "XV.TaxAuthorityList"},
+        {name: "taxCodeList", kind: "XV.TaxCodeList"},
+        {name: "taxClassList", kind: "XV.TaxClassList"},
+        {name: "taxRateList", kind: "XV.TaxRateList"},
+        {name: "taxTypeList", kind: "XV.TaxTypeList"},
+        {name: "taxZoneList", kind: "XV.TaxZoneList"},
+        {name: "customerGroupList", kind: "XV.CustomerGroupList"},
+        {name: "freightClassList", kind: "XV.FreightClassList"},
+        {name: "itemSiteList", kind: "XV.ItemSiteList"},
+        {name: "costCategoryList", kind: "XV.CostCategoryList"},
+        {name: "plannerCodeList", kind: "XV.PlannerCodeList"},
+        {name: "customerTypeList", kind: "XV.CustomerTypeList"}        
       ];
 
-    // XT.app.$.postbooks.appendPanels("setup", setupPanels);
+    XT.app.$.postbooks.appendPanels("setup", setupPanels);
     // if (XT.extensions.sales) {
     //   salesPanels = [
     //     {name: "sales_invoiceList", kind: "XV.InvoiceList"}

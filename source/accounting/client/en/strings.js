@@ -3,6 +3,7 @@
   
   var lang = XT.stringsFor('en_US', {
     '_accounting' : 'Accounting',
+    '_accountingDescription' : 'Accounting Management',
 
     //billing
     "_accountsReceivable": "Accounts Receivable",
